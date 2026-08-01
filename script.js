@@ -9,12 +9,13 @@ const contenedorTareas = document.getElementById("Contenedor-Tareas");
 const tipoBtn = document.getElementById("Tipo-Btn");
 const agregarTareaBtn = document.getElementById("Agregar-Tarea-Btn");
 const inputTarea = document.getElementById("Input-Tarea");
+const listaTareas = document.getElementById("Lista-Tareas");
 
 //=============================FUNCIONES===================================
 
 
 function crearContenedorTarea() {
-contenedorTareas.insertAdjacentHTML(
+listaTareas.insertAdjacentHTML(
     "beforeend",
     `
     <li class="Tarea-Item">
@@ -26,7 +27,8 @@ contenedorTareas.insertAdjacentHTML(
             </div>
 
             <div class="TareaDerecha">
-                <div class="fecha"></div>
+            <button class="fecha-btn"><i data-lucide="calendar"></i></button>
+                <input class="fecha" type="date">
                 <div class="prioridad"></div>
                 <div class="favorito"></div>
                 <button class="editar-btn"><i data-lucide="square-pen"></i></button>
@@ -40,7 +42,7 @@ contenedorTareas.insertAdjacentHTML(
 );
 
 lucide.createIcons();
-return contenedorTareas;
+return listaTareas;
 }
 
 function darEstilo() {
@@ -66,8 +68,41 @@ function darEstilo() {
     }
 }
 
+
 //=============================LISTENERS===================================
 agregarTareaBtn.addEventListener("click", () => {
     crearContenedorTarea();
     darEstilo();
 });
+
+listaTareas.addEventListener("click", (e) => {
+    console.log(e.target);
+    const boton = e.target.closest(".fecha-btn");
+
+    if (!boton) return;
+
+    console.log("Botón encontrado");
+
+    const tarea = boton.closest(".Tarea");
+    const inputFecha = tarea.querySelector(".fecha");
+
+    inputFecha.showPicker();
+});
+
+listaTareas.addEventListener("change", (e) => {
+    if (!e.target.classList.contains("fecha")) return;
+
+    console.log(e.target.value);
+});
+
+modoClaroBtn.addEventListener("click", () => {
+    document.body.classList.remove("dark-mode");
+
+});
+
+modoOscuroBtn.addEventListener("click", () => {
+
+    document.body.classList.add("dark-mode");
+});
+
+

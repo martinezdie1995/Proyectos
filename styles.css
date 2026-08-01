@@ -5,90 +5,131 @@
 
 }
 
-/*============================
-ESTILOS DE LA BARRA IZQUIERDA 
-==============================*/
+/* ===========================
+BARRA IZQUIERDA
+=========================== */
+
 .Barra-Izq {
-    max-width: 250px;
-    min-width: 150px;
-    width: auto;
-    padding: 15px;
-    background-color: #111827;
-    color: whitesmoke;
-    justify-content: center;
-    text-align: center;
-    
-}
-.Barra-Izq h2{
-    width: auto;
-    font-size: 20px;
-    padding: 0px;
-    margin: 0px;
-}
-li{
-    font-size: 15px;;
+    width: 280px;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
 }
 
-.Columna-Numeros {
-    display: flex;
-    flex-direction: column;
-    padding-top: 22px;
-    gap: 3px;
-    
+.Barra-Izq h2 {
+    color: #6d3cf5;
+    margin-bottom: 15px;
+    font-size: 26px;
 }
+
+.Barra-Izq h3 {
+    color: #6d3cf5;
+    margin: 15px 0 10px;
+}
+
+.Barra-Izq hr {
+    border: none;
+    height: 1px;
+    background: #e5e7eb;
+    margin: 18px 0;
+}
+
+/* ===========================
+LISTAS
+=========================== */
 
 .Columnas-Tareas {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
-.Estado-Tareas {
-
-    padding-left: 5px;
-    text-align: left;
+.Estado-Tareas,
+.Etiquetas {
     list-style: none;
-    justify-content: space-between;
+    padding: 0;
+    margin: 0;
 }
 
-#Barra-Progreso{
-    font-size: 15px;
-    background: color #878e99;;
+.Estado-Tareas li,
+.Etiquetas li {
+    padding: 10px 12px;
+    margin-bottom: 6px;
     border-radius: 10px;
-    padding: 5px;
-    text-align: left;
+    cursor: pointer;
+    transition: .2s;
+    font-weight: 500;
 }
-#Barra-Progreso span{
-    background-color: #314f75;
-    color: #6729d1;
+
+.Estado-Tareas li:hover,
+.Etiquetas li:hover {
+    background: #f3efff;
+    color: #6d3cf5;
+}
+
+/* ===========================
+CONTADORES
+=========================== */
+
+.Columna-Numeros {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #6b7280;
+    font-weight: bold;
+}
+
+.Columna-Numeros span {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f3efff;
+    color: #6d3cf5;
+
+    border-radius: 50%;
+}
+
+/* ===========================
+PROGRESO
+=========================== */
+
+#Barra-Progreso {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f8f7ff;
+    border-radius: 12px;
+    border: 1px solid var(--borde);
+}
+
+#Barra-Progreso h3 {
+    margin: 10px 0;
 }
 
 #Barra-Entera {
-background-color: white;
-width: auto;
-height: 6px;
-border-radius: 5px;
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
 }
-#Barra-Completada{
-    background-color: #6729d1;
-    width: 30%;
+
+#Barra-Completada {
+    width: 0%;
     height: 100%;
-}
-#Barra-Progreso span{
-    background-color: #6729d1;
-    padding:5px;
-    border-radius: 50px;;
+    background: linear-gradient(90deg, #8b5cf6, #6d3cf5);
+    border-radius: inherit;
+    transition: width .4s ease;
 }
 
-
-.Etiquetas {
-    padding-left: 5px;
-    text-align: left;
-    list-style: none;
+#Contador-Tareas-Completadas {
+    margin-top: 10px;
+    text-align: center;
+    color: #6d3cf5;
 }
-
-
-
-
 /* ===========================
 BARRA DERECHA
 =========================== */
@@ -121,16 +162,16 @@ ENCABEZADO
 #Modo-Oscuro {
     width: 42px;
     height: 42px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--borde);
     border-radius: 50%;
-    background: white;
+    background: var(--panel);
     cursor: pointer;
     transition: .2s;
 }
 
 #Modo-Claro:hover,
 #Modo-Oscuro:hover {
-    background: #6d3cf5;
+    background: var(--principal);
     color: white;
 }
 
@@ -142,7 +183,7 @@ BUSCADOR
     flex: 1;
     max-width: 350px;
     padding: 10px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--borde);
     border-radius: 10px;
     outline: none;
 }
@@ -175,13 +216,13 @@ BUSCADOR
     flex: 1;
     max-width: 350px;
     padding: 10px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--borde);
     border-radius: 10px;
     outline: none;
 }
 
 #Input-Tarea:focus {
-    border-color: #6d3cf5;
+    border-color: var(--principal);
     box-shadow: 0 0 6px rgba(109,60,245,.25);
 }
 
@@ -216,9 +257,9 @@ SELECTS
 #Ordenamiento-Tareas,
 #Prioridad-Btn {
     padding: 10px 14px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--borde);
     border-radius: 10px;
-    background: white;
+    background: var(--panel);
     cursor: pointer;
     font-size: 14px;
 
@@ -232,14 +273,14 @@ SELECTS
 #Tipo-Btn:hover,
 #Ordenamiento-Tareas:hover,
 #Prioridad-Btn:hover {
-    border-color: #6d3cf5;
+    border-color: var(--principal);
 }
 
 #Tipo-Btn:focus,
 #Ordenamiento-Tareas:focus,
 #Prioridad-Btn:focus {
     outline: none;
-    border-color: #6d3cf5;
+    border-color: var(--principal);
     box-shadow: 0 0 6px rgba(109,60,245,.25);
 }
 
@@ -268,17 +309,17 @@ BOTÓN FECHA
 
 #Fecha-Btn {
     padding: 10px 14px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--borde);
     border-radius: 10px;
-    background: white;
-    color: #555;
+    background: var(--panel);
+    color: var(--texto);
     cursor: pointer;
     transition: .2s;
 }
 
 #Fecha-Btn:hover {
     background: #f3efff;
-    border-color: #6d3cf5;
+    border-color: var(--principal);
     color: #6d3cf5;
 }
 
@@ -326,16 +367,16 @@ FILTROS
 
 #Filtros-Izq button {
     padding: 8px 14px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--borde);
     border-radius: 20px;
-    background: white;
+    background: var(--panel);
     cursor: pointer;
     transition: .2s;
 }
 
 #Filtros-Izq button:hover {
-    background: #6d3cf5;
-    color: white;
+    background: var(--principal);
+    color: var(--texto);
     border-color: #6d3cf5;
 }
 
@@ -347,7 +388,7 @@ ESTILOS DE CADA TAREA
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
+    background-color: var(--panel);
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 2px;
@@ -359,7 +400,7 @@ ESTILOS DE CADA TAREA
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: white;
+    background-color: var(--panel);
     height: 100%;
     margin-left: 5px;
 }
@@ -368,14 +409,14 @@ ESTILOS DE CADA TAREA
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: white;
+    background-color: var(--panel);
     height: 100%;
     margin-right: 5px;
 }
 
 .TipoTareaTrabajo {
     background-color:  #acc4f1;
-    color: #3b82f6;
+    color: var(--texto);
     width: auto;
     height: 15px;
     border-radius: 3px;
@@ -434,5 +475,73 @@ ESTILOS DE CADA TAREA
     margin: 0;
 }
 
+/*============================
+MODO CLARO Y MODO OSCURO
+==============================*/
+:root {
+    --fondo: #ece9f7;
+    --panel: #ffffff;
+    --texto: #222;
+    --texto-secundario: #666;
+    --borde: #d1d5db;
+    --principal: #6d3cf5;
+    --hover: #f3efff;
+    --sombra: rgba(0,0,0,.35);
 
+    --barra: #353535;
+}
 
+body.dark-mode {
+    --fondo: #121212;
+    --panel: #1f1f1f;
+    --texto: #f5f5f5;
+    --texto-secundario: #bdbdbd;
+    --borde: #3b3b3b;
+    --principal: #8b5cf6;
+    --hover: #2b2540;
+}
+
+body {
+    background: var(--fondo);
+    color: var(--texto);
+    transition: .3s;
+}
+
+.Barra-Izq {
+    background: var(--panel);
+    color: var(--texto);
+}
+
+.Barra-Der {
+    background: var(--fondo);
+}
+
+#Barra-agregar-Tareas,
+#Barra-Progreso,
+.Tarea {
+    background: var(--panel);
+    color: var(--texto);
+}
+
+input,
+select {
+    background: var(--panel);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+}
+
+button {
+    background: var(--panel);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+}
+
+#Agregar-Tarea-Btn {
+    background: var(--principal);
+    color: white;
+}
+
+#Filtros-Izq button:hover {
+    background: var(--principal);
+    color: white;
+}
