@@ -133,7 +133,7 @@ ESTILOS DE LA BARRA DERECHA
 #Encabezado input {
     width: auto;
     height: auto;
-    border-radius: 10px solid grey ;
+    border-radius: 1px solid grey ;
     margin-right: 5px;
     margin-left: 5px;
 }
@@ -177,10 +177,97 @@ ESTILOS DE LA BARRA DERECHA
 }
 
 #Agregar-Tarea-Der button {
-    border-radius: 3px solid grey
-    ;
+    border-radius: 1px solid grey;
     padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
+#Tipo-Btn {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 35px 10px 10px;
+    cursor: pointer;
+}
+
+#Tipo-Btn:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 5px rgba(124, 58, 237, 0.4);
+}
+
+.select-container {
+position: relative;
+display: inline-block;
+}
+
+.select-container select {
+appearance: none;
+padding: 10px 40px 10px 10px;
+}
+
+.select-container::after {
+content: "▼";
+position: absolute;
+right: 12px;
+top: 50%;
+transform: translateY(-50%);
+pointer-events: none;
+}
+
+#Prioridad-Btn {
+padding: 10px 16px;
+border: 2px solid #f59e0b;
+border-radius: 10px;
+background: #fff8e1;
+color: #92400e;
+font-size: 15px;
+font-weight: 600;
+cursor: pointer;
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+transition: all 0.2s ease;
+}
+
+#Prioridad-Btn:hover {
+background: #fde68a;
+border-color: #d97706;
+}
+
+#Prioridad-Btn:focus {
+outline: none;
+box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25);
+}
+
+#Fecha-Btn {
+display: flex;
+align-items: center;
+gap: 6px;
+
+padding: 10px 14px;
+border: 1px solid #e5e7eb;
+border-radius: 999px;
+
+background: white;
+color: #4b5563;
+
+cursor: pointer;
+transition: all 0.2s ease;
+}
+
+#Fecha-Btn:hover {
+border-color: #3b82f6;
+color: #3b82f6;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
 
 /*============================
 ESTILOS DE CADA TAREA 
@@ -203,11 +290,8 @@ ESTILOS DE CADA TAREA
     align-items: center;
     justify-content: flex-start;
     background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 2px;
-    height: 25px;
-    margin-right: 5px;
+    height: 100%;
+    margin-left: 5px;
 }
 
 .TareaDerecha {
@@ -215,10 +299,7 @@ ESTILOS DE CADA TAREA
     align-items: center;
     justify-content: flex-end;
     background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 2px;
-    height: 25px;
+    height: 100%;
     margin-right: 5px;
 }
 
@@ -231,6 +312,7 @@ ESTILOS DE CADA TAREA
     font-size: 15px;
     font-weight: bold;
     padding: 5px;
+    margin-left: 15px;
 }
 
 .TipoTareaSalud {
@@ -242,6 +324,7 @@ ESTILOS DE CADA TAREA
     font-size: 15px;
     font-weight: bold;
     padding: 5px;
+    margin-left: 15px;
 }
 
 .TipoTareaPersonal {
@@ -253,6 +336,7 @@ ESTILOS DE CADA TAREA
     font-size: 15px;
     font-weight: bold;
     padding: 5px;
+    margin-left: 15px;
 }
 
 .TipoTareaEstudio {
@@ -264,9 +348,17 @@ ESTILOS DE CADA TAREA
     font-size: 15px;
     font-weight: bold;
     padding: 5px;
+    margin-left: 15px;
 }
 
-#Lista-Tareas {
+.texto-tarea {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    width: auto;
+    height: auto;
+}
+.Tarea-Item {
     list-style: none;
     padding: 0;
     margin: 0;

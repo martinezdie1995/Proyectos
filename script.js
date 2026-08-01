@@ -13,27 +13,32 @@ const inputTarea = document.getElementById("Input-Tarea");
 //=============================FUNCIONES===================================
 
 
-function crearContenedorTarea (){
-contenedorTareas.innerHTML += 
-`
-<li>
-    <div id="Tarea">
-    <div class="TareaIzquierda">
-        <input type="checkbox"></input>
-        <p class="texto-tarea">${inputTarea.value}</p>
-        <div class="tipo-tarea">${tipoBtn.value}</div>
-    </div>
+function crearContenedorTarea() {
+contenedorTareas.insertAdjacentHTML(
+    "beforeend",
+    `
+    <li class="Tarea-Item">
+        <div class="Tarea">
+            <div class="TareaIzquierda">
+                <input type="checkbox">
+                <p class="texto-tarea">${inputTarea.value}</p>
+                <div class="tipo-tarea">${tipoBtn.value}</div>
+            </div>
 
-    <div class="TareaDerecha">
-        <div class="fecha"></div>
-        <div class="prioridad"></div>
-        <div class="favorito"></div> 
-        <button class="editar-btn"></button>
-        <button class="borrar-btn"><i data-lucide="trash-2"></i> </button>
-    </div>
-    </div>
-</li>
-`
+            <div class="TareaDerecha">
+                <div class="fecha"></div>
+                <div class="prioridad"></div>
+                <div class="favorito"></div>
+                <button class="editar-btn"><i data-lucide="square-pen"></i></button>
+                <button class="borrar-btn">
+                <i data-lucide="trash-2"></i>
+                </button>
+            </div>
+        </div>
+    </li>
+    `
+);
+
 lucide.createIcons();
 return contenedorTareas;
 }

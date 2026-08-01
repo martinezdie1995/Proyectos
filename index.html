@@ -75,13 +75,15 @@
                 <div id="Barra-agregar-Tareas">
                     <input id="Input-Tarea" placeholder="¿Qué tarea quieres agregar?">
                     <div id="Agregar-Tarea-Der">
-                        <select id="Tipo-Btn">
-                            <option value="Tipo" selected>Seleccione tipo de tarea</option>
-                            <option value="Trabajo">Trabajo</option>
-                            <option value="Salud">Salud</option>
-                            <option value="Personal">Personal</option>
-                            <option value="Estudio">Estudio</option>
+                        <div class="select-container">
+                            <select id="Tipo-Btn">
+                                <option value="Tipo" selected>Seleccione tipo de tarea</option>
+                                <option value="Trabajo">Trabajo</option>
+                                <option value="Salud">Salud</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Estudio">Estudio</option>
                         </select>
+                        </div>
                         <button id="Fecha-Btn">📅 Fecha</button>
                         <button id="Prioridad-Btn">⚡️Prioridad</button>
                         <button id="Agregar-Tarea-Btn">➕Agregar</button>
@@ -114,14 +116,7 @@
     </section>
 </section>
     <script src="script.js"></script>
-    <script>
-import { createIcons, trash2 } from 'lucide';
-
-createIcons({
-icons: {
-    trash2
-}
-});
-</script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script src="script.js"></script>
 </body>
 </html>
