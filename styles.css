@@ -1,0 +1,243 @@
+#Contenedor-Padre{
+    display: flex;
+    width: auto;
+    height: auto;
+
+}
+
+/*============================
+ESTILOS DE LA BARRA IZQUIERDA 
+==============================*/
+.Barra-Izq {
+    max-width: 250px;
+    min-width: 150px;
+    width: auto;
+    padding: 15px;
+    background-color: #111827;
+    color: whitesmoke;
+    justify-content: center;
+    text-align: center;
+    
+}
+.Barra-Izq h2{
+    width: auto;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+}
+li{
+    font-size: 15px;;
+}
+
+.Columna-Numeros {
+    display: flex;
+    flex-direction: column;
+    padding-top: 22px;
+    gap: 3px;
+    
+}
+
+.Columnas-Tareas {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Estado-Tareas {
+
+    padding-left: 5px;
+    text-align: left;
+    list-style: none;
+    justify-content: space-between;
+}
+
+#Barra-Progreso{
+    font-size: 15px;
+    background: color #878e99;;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: left;
+}
+#Barra-Progreso span{
+    background-color: #314f75;
+    color: #6729d1;
+}
+
+#Barra-Entera {
+background-color: white;
+width: auto;
+height: 6px;
+border-radius: 5px;
+}
+#Barra-Completada{
+    background-color: #6729d1;
+    width: 30%;
+    height: 100%;
+}
+#Barra-Progreso span{
+    background-color: #6729d1;
+    padding:5px;
+    border-radius: 50px;;
+}
+
+
+.Etiquetas {
+    padding-left: 5px;
+    text-align: left;
+    list-style: none;
+}
+
+
+
+
+/*============================
+ESTILOS DE LA BARRA DERECHA 
+==============================*/
+.Barra-Der {
+
+    background-color: rgb(206, 203, 203);
+    padding-left: 18px;
+    width: 100%
+    
+}
+
+
+#Encabezado {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.Botones-Encabezado {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+#Barra-agregar-Tareas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#Modo-Oscuro, #Modo-Claro {
+    border-radius: 20px;
+    border: 1px solid grey;
+    margin-right: 10px;
+}
+#Encabezado input {
+    width: auto;
+    height: auto;
+    border-radius: 10px solid grey ;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#Input-Tarea {
+    width: 100%;
+    height: 20px;
+    max-width:300px;
+}
+
+#Agregar-Tarea-Btn{
+    background-color: #6d3cf5;
+    color: white;
+    padding: 7px;
+}
+#Filtros-Izq {
+    justify-content: left;
+}
+#Ordenamiento-Tareas {
+    justify-content: end;
+}
+
+#Contenedor-Tareas span {
+    background-color:white ;
+}
+
+#Filtros-Izq button{
+    border-radius: 15px;
+    border: 1px solid grey;
+    padding: 5px;
+    margin-bottom: 8px;
+}
+#Filtros-Der{
+    margin-right: 10px;
+    margin-top: 3px;
+    
+
+}
+#Filtros {
+    display: flex;
+    justify-content: space-between;
+}
+
+#Agregar-Tarea-Der button {
+    border-radius: 3px solid grey
+    ;
+    padding: 5px;
+}
+
+/*============================
+ESTILOS DE CADA TAREA 
+==============================*/
+
+.Tarea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.TipoTareaTrabajo {
+    background-color:  #acc4f1;
+    color: #3b82f6;
+    width: auto;
+    height: 15px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.TipoTareaSalud {
+    background-color:  #f8e1c8;
+    color: #f59e08;
+    width: auto;
+    height: 15px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.TipoTareaPersonal {
+    background-color:  #d7c1f7;
+    color: #8B5CF6;
+    width: auto;
+    height: 15px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.TipoTareaEstudio {
+    background-color:  #d7c1f7;
+    color: #8B5CF6;
+    width: auto;
+    height: 15px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
