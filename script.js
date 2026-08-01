@@ -10,6 +10,7 @@ const tipoBtn = document.getElementById("Tipo-Btn");
 const agregarTareaBtn = document.getElementById("Agregar-Tarea-Btn");
 const inputTarea = document.getElementById("Input-Tarea");
 const listaTareas = document.getElementById("Lista-Tareas");
+const prioridadBtn = document.getElementById("Prioridad-Btn");
 
 //=============================FUNCIONES===================================
 
@@ -29,7 +30,7 @@ listaTareas.insertAdjacentHTML(
             <div class="TareaDerecha">
             <button class="fecha-btn"><i data-lucide="calendar"></i></button>
                 <input class="fecha" type="date">
-                <div class="prioridad"></div>
+                <div class="prioridad">${prioridadBtn.value}</div>
                 <div class="favorito"></div>
                 <button class="editar-btn"><i data-lucide="square-pen"></i></button>
                 <button class="borrar-btn">
@@ -68,11 +69,30 @@ function darEstilo() {
     }
 }
 
+function darPrioridad() {
+    const ultima = contenedorTareas.lastElementChild;
+    const prioridad = ultima.querySelector(".prioridad");
+
+    switch (prioridadBtn.value) {
+        case "Alta":
+            prioridad.classList.add("PrioridadAlta");
+            break;
+
+        case "Media":
+            prioridad.classList.add("PrioridadMedia");
+            break;
+
+        case "Baja":
+            prioridad.classList.add("PrioridadBaja");
+            break;
+    }
+}
 
 //=============================LISTENERS===================================
 agregarTareaBtn.addEventListener("click", () => {
     crearContenedorTarea();
     darEstilo();
+    darPrioridad();
 });
 
 listaTareas.addEventListener("click", (e) => {

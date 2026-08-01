@@ -13,24 +13,24 @@ BARRA IZQUIERDA
     width: 280px;
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+    box-shadow: 0 6px 20px var(--sombra);
 }
 
 .Barra-Izq h2 {
-    color: #6d3cf5;
+    color: var(--principal);
     margin-bottom: 15px;
     font-size: 26px;
 }
 
 .Barra-Izq h3 {
-    color: #6d3cf5;
+    color: var(--texto-secundario);
     margin: 15px 0 10px;
 }
 
 .Barra-Izq hr {
     border: none;
     height: 1px;
-    background: #e5e7eb;
+    background: var(--borde);
     margin: 18px 0;
 }
 
@@ -189,8 +189,8 @@ BUSCADOR
 }
 
 #Encabezado input:focus {
-    border-color: #6d3cf5;
-    box-shadow: 0 0 6px rgba(109,60,245,.25);
+    border-color: var(--principal);
+    box-shadow: 0 0 6px var(--shadow);
 }
 
 #Barra-agregar-Tareas {
@@ -199,7 +199,7 @@ BUSCADOR
     align-items: center;
     gap: 15px;
 
-    background: white;
+    background: var(--panel);
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 15px;
@@ -223,7 +223,7 @@ BUSCADOR
 
 #Input-Tarea:focus {
     border-color: var(--principal);
-    box-shadow: 0 0 6px rgba(109,60,245,.25);
+    box-shadow: 0 0 6px var(--shadow);
 }
 
 #Agregar-Tarea-Der {
@@ -341,7 +341,7 @@ BOTÓN AGREGAR
 }
 
 #Agregar-Tarea-Btn:hover {
-    background: #5930cc;
+    background: #8b5cf6;
     transform: translateY(-2px);
 }
 
@@ -416,7 +416,7 @@ ESTILOS DE CADA TAREA
 
 .TipoTareaTrabajo {
     background-color:  #acc4f1;
-    color: var(--texto);
+    color: #3554b8;
     width: auto;
     height: 15px;
     border-radius: 3px;
@@ -544,4 +544,48 @@ button {
 #Filtros-Izq button:hover {
     background: var(--principal);
     color: white;
+}
+
+/* ==========================
+PRIORIDADES
+========================== */
+
+.PrioridadBaja {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 5px 10px;
+    margin-left: 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.PrioridadMedia {
+    background: #fef3c7;
+    color: #b45309;
+    padding: 5px 10px;
+    margin-left: 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.PrioridadAlta {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 5px 10px;
+    margin-left: 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.PrioridadUrgente {
+    background: #6d3cf5;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
 }
