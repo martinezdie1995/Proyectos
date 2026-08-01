@@ -89,47 +89,81 @@ border-radius: 5px;
 
 
 
-/*============================
-ESTILOS DE LA BARRA DERECHA 
-==============================*/
-.Barra-Der {
+/* ===========================
+BARRA DERECHA
+=========================== */
 
-    background-color: rgb(206, 203, 203);
-    padding-left: 18px;
-    width: 100%
-    
+.Barra-Der {
+    width: 100%;
+    padding: 18px;
+    background-color: #ece9f7;
 }
 
+
+
+/* ===========================
+   ENCABEZADO
+=========================== */
 
 #Encabezado {
     display: flex;
     justify-content: space-between;
-    height: 40px;
-    margin-bottom: 10px;
     align-items: center;
+    margin-bottom: 20px;
 }
+
 .Botones-Encabezado {
     display: flex;
-    justify-content: flex-end;
-    
+    gap: 10px;
 }
 
-#Barra-agregar-Tareas{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
+#Modo-Claro,
+#Modo-Oscuro {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d1d5db;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#Modo-Claro:hover,
+#Modo-Oscuro:hover {
+    background: #6d3cf5;
+    color: white;
+}
+
+/* ===========================
+BUSCADOR
+=========================== */
+
+#Encabezado input {
+    flex: 1;
+    max-width: 350px;
     padding: 10px;
+    border: 1px solid #d1d5db;
     border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    outline: none;
 }
 
-#Modo-Oscuro, #Modo-Claro {
-    border-radius: 20px;
-    border: 1px solid grey;
-    margin-right: 10px;
+#Encabezado input:focus {
+    border-color: #6d3cf5;
+    box-shadow: 0 0 6px rgba(109,60,245,.25);
 }
+
+#Barra-agregar-Tareas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
 #Encabezado input {
     width: auto;
     height: auto;
@@ -138,10 +172,25 @@ ESTILOS DE LA BARRA DERECHA
     margin-left: 5px;
 }
 #Input-Tarea {
-    width: 100%;
-    height: 20px;
-    max-width:300px;
+    flex: 1;
+    max-width: 350px;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
 }
+
+#Input-Tarea:focus {
+    border-color: #6d3cf5;
+    box-shadow: 0 0 6px rgba(109,60,245,.25);
+}
+
+#Agregar-Tarea-Der {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 
 #Agregar-Tarea-Btn{
     background-color: #6d3cf5;
