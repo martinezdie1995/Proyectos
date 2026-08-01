@@ -232,8 +232,8 @@ ESTILOS DE CADA TAREA
 }
 
 .TipoTareaEstudio {
-    background-color:  #d7c1f7;
-    color: #8B5CF6;
+    background-color:  #c4fdd8;
+    color: #22a75a;
     width: auto;
     height: 15px;
     border-radius: 3px;
@@ -241,3 +241,5 @@ ESTILOS DE CADA TAREA
     font-weight: bold;
     padding: 5px;
 }
+
+.
