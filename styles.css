@@ -581,11 +581,143 @@ PRIORIDADES
 }
 
 .PrioridadUrgente {
-    background: #6d3cf5;
+    background: #875ff7;
     color: white;
     padding: 5px 10px;
     margin-left: 12px;
     border-radius: 999px;
     font-size: 13px;
     font-weight: 600;
+}
+
+.borrar-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #ef4444;
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.borrar-btn:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.borrar-btn:active {
+    transform: scale(0.95);
+}
+
+.borrar-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+.editar-btn {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #6d3cf5;
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.editar-btn:hover {
+    background: #ede9fe;
+    color: #5930cc;
+}
+
+.editar-btn:active {
+    transform: scale(0.95);
+}
+
+.editar-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+/* ==========================
+BOTÓN MARCAR COMPLETADAS
+========================== */
+
+#Marcar-Completadas-Btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #22c55e;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+#Marcar-Completadas-Btn:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(34, 197, 94, .25);
+}
+
+#Marcar-Completadas-Btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+#Marcar-Completadas-Btn svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+.TareaCompletada {
+    background: #f3f4f6;
+    opacity: 0.6;
+}
+
+.TareaCompletada .texto-tarea {
+    text-decoration: line-through;
+    color: #6b7280;
+}
+
+.TareaCompletada .tipo-tarea,
+.TareaCompletada .prioridad {
+    opacity: 0.6;
+}
+
+body.dark-mode .TareaCompletada {
+    background: #2b2b2b;
+}
+
+body.dark-mode .TareaCompletada .texto-tarea {
+    color: #9ca3af;
 }

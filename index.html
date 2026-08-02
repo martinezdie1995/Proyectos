@@ -16,17 +16,16 @@
                     <li>✔️Todas </li>
                     <li>🕐 Pendientes </li>
                     <li> ✅Completadas </li>
-                    <li> 📌Importantes </li>
+                    
                 </ul>
                 <div class="Columna-Numeros">
-                    <span>#
+                    <span id="tareastodas">
                     </span>
-                    <span>#
+                    <span id="tareaspendientes">
                     </span>
-                    <span>#
+                    <span id="tareascompletadas">
                     </span>
-                    <span>#
-                    </span>
+                    
                 </div>
             </div>
             <hr>
@@ -87,6 +86,7 @@
                         <button id="Fecha-Btn">📅 Fecha</button>
                         <select id="Prioridad-Btn">
                             <option value="Prioridad" selected>⚡️Prioridad</option>
+                            <option value="Urgente">Urgente</option>
                             <option value="Alta">Alta</option>
                             <option value="Media">Media</option>
                             <option value="Baja">Baja</option>
@@ -101,6 +101,10 @@
                     <button id="Filtro-Completadas">Completadas</button>
                     </div>
                     <div id="Filtros-Der">
+                        <button id="Marcar-Completadas-Btn" hidden>
+    <i data-lucide="check-check"></i>
+    Marcar completadas
+</button>
                         <select id="Ordenamiento-Tareas"  >
                             <option value="" selected> Ordenar por: </option>
                             <option value="Fecha-Limite">Fecha Límite</option>
