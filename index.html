@@ -65,8 +65,8 @@
                 <h1>Todas las Tareas</h1>
                 <input id="Buscador-Tareas" placeholder="Buscar Tarea...">
                 <div class ="Botones-Encabezado">
-                    <button id="Modo-Claro">☀️</button>
-                    <button id="Modo-Oscuro">🌙</button>
+                    <button id="Modo-Claro"><i data-lucide="sun"></i></button>
+                    <button id="Modo-Oscuro"><i data-lucide="moon"></i>  </button>
                     
                 </div>
             </div>
@@ -83,7 +83,13 @@
                                 <option value="Estudio">Estudio</option>
                         </select>
                         </div>
-                        <button id="Fecha-Btn">📅 Fecha</button>
+                        <button class="fecha-btn">
+                        <i data-lucide="calendar"></i>
+                        </button>
+
+                        <input class="fecha" type="date" hidden>
+
+                            <span class="fecha-texto"></span>
                         <select id="Prioridad-Btn">
                             <option value="Prioridad" selected>⚡️Prioridad</option>
                             <option value="Urgente">Urgente</option>
@@ -124,8 +130,10 @@
         </div>
     </section>
 </section>
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
 <script src="script.js"></script>
 </body>
 </html>

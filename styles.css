@@ -721,3 +721,84 @@ body.dark-mode .TareaCompletada {
 body.dark-mode .TareaCompletada .texto-tarea {
     color: #9ca3af;
 }
+
+/* ==========================
+BOTONES MODO CLARO / OSCURO
+========================== */
+
+.Botones-Encabezado {
+    display: flex;
+    gap: 10px;
+}
+
+#Modo-Claro,
+#Modo-Oscuro {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+#Modo-Claro svg,
+#Modo-Oscuro svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+}
+
+#Modo-Claro {
+    background: #fff7d6;
+    color: #f59e0b;
+}
+
+#Modo-Claro:hover {
+    background: #fde68a;
+    color: #b45309;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(245, 158, 11, .25);
+}
+
+#Modo-Claro:active {
+    transform: translateY(0);
+}
+
+#Modo-Oscuro {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+#Modo-Oscuro:hover {
+    background: #6366f1;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(110, 112, 235, 0.3);
+}
+
+#Modo-Oscuro:active {
+    transform: translateY(0);
+}
+
+body.dark-mode #Modo-Oscuro {
+    background: #6d3cf5;
+    color: white;
+}
+
+body.dark-mode #Modo-Claro {
+    background: #2d2d2d;
+    color: #facc15;
+}
+
+.fecha-texto {
+    margin-left: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+}

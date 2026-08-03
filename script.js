@@ -13,6 +13,7 @@ const listaTareas = document.getElementById("Lista-Tareas");
 const prioridadBtn = document.getElementById("Prioridad-Btn");
 const contadorTareas = document.getElementById("tareastodas");
 const marcarCompletadasBtn = document.getElementById("Marcar-Completadas-Btn");
+lucide.createIcons();
 //=============================FUNCIONES===================================
 
 
@@ -176,19 +177,27 @@ listaTareas.addEventListener("click", (e) => {
 });
 
 listaTareas.addEventListener("change", (e) => {
-    if (!e.target.classList.contains("fecha")) return;
 
-    console.log(e.target.value);
-
-    if (!e.target.classList.contains("checkbox")) return;
+if (e.target.classList.contains("fecha")) {
 
     const tarea = e.target.closest(".Tarea");
+    const textoFecha = tarea.querySelector(".fecha-texto");
 
-    tarea.classList.toggle("TareaCompletada", e.target.checked);
+    textoFecha.textContent = e.target.value;
 
+    const [anio, mes, dia] = e.target.value.split("-");
+
+textoFecha.textContent = `${dia}/${mes}/${anio}`;
+}
+
+    
+
+    if (e.target.classList.contains("checkbox")) {
     const hayMarcadas = listaTareas.querySelectorAll(".checkbox:checked").length > 0;
 
     marcarCompletadasBtn.hidden = !hayMarcadas;
+}
+
 });
 
 modoClaroBtn.addEventListener("click", () => {
@@ -201,10 +210,16 @@ modoOscuroBtn.addEventListener("click", () => {
     document.body.classList.add("dark-mode");
 });
 
-listaTareas.addEventListener("change", (e) => {
-    if (!e.target.classList.contains("checkbox")) return;
+marcarCompletadasBtn.addEventListener("click", () => {
 
-    const hayMarcadas = listaTareas.querySelectorAll(".checkbox:checked").length > 0;
+    const checkboxesMarcados = listaTareas.querySelectorAll(".checkbox:checked");
 
-    marcarCompletadasBtn.hidden = !hayMarcadas;
+    checkboxesMarcados.forEach((checkbox) => {
+        const tarea = checkbox.closest(".Tarea");
+        tarea.classList.add("TareaCompletada");
+        checkbox.checked = false;
+    });
+
+    marcarCompletadasBtn.hidden = true;
 });
+
