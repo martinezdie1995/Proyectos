@@ -9,13 +9,13 @@
 <body>
     <section id = "Contenedor-Padre">
         <section class = "Barra-Izq">
-            <h2 >📝 Mis Tareas</h2>
+            <h2 ><i data-lucide="notebook-pen"></i>   Mis Tareas</h2>
             <hr>
             <div class="Columnas-Tareas">
                 <ul class="Estado-Tareas">
-                    <li>✔️Todas </li>
-                    <li>🕐 Pendientes </li>
-                    <li> ✅Completadas </li>
+                    <li><i data-lucide="list-todo"></i>Todas </li>
+                    <li><i data-lucide="clock"></i>Pendientes </li>
+                    <li> <i data-lucide="circle-check-big"></i>Completadas </li>
                     
                 </ul>
                 <div class="Columna-Numeros">
@@ -33,36 +33,46 @@
                 <h3 >Etiquetas</h3>
                     <div class="Columnas-Tareas">
                     <ul class="Etiquetas">
-                        <li>🔵 Trabajo</li>
-                        <li>🟢Estudio</li>
-                        <li>🟣Personal</li>
-                        <li>🟠Salud</li>
+                        <li><span class="circulo circulo-trabajo"></span>Trabajo</li>
+                        <li><span class="circulo circulo-estudio"></span>Estudio</li>
+                        <li><span class="circulo circulo-personal"></span>Personal</li>
+                        <li><span class="circulo circulo-salud"></span>Salud</li>
                     </ul>
                 <div class="Columna-Numeros">
-                    <span>#
+                    <span class="trabajo">
                     </span>
-                    <span>#
+                    <span class="estudio">
                     </span>
-                    <span>#
+                    <span class="personal">
                     </span>
-                    <span>#
+                    <span class="salud">
                     </span>
                 </div>
                     </div>
             </div>
             <div id="Barra-Progreso">
-                <span>📊</span>
-                <h3>Progreso general</h3>
-                <div id="Barra-Entera">
-                    <div id="Barra-Completada">
-                    </div>
-                </div>
-                <h4 id="Contador-Tareas-Completadas"></h4>
-            </div>
+    <div class="Progreso-Header">
+        <span>Progreso</span>
+        <span id="Porcentaje-Progreso">0%</span>
+    </div>
+
+    <div id="Barra-Entera">
+        <div id="Barra-Completada"></div>
+    </div>
+
+    <h4 id="Contador-Tareas-Completadas">
+        0 de 0 tareas completadas
+    </h4>
+</div>
+
+</div>
         </section>
         <section class="Barra-Der">
             <div id="Encabezado">
-                <h1>Todas las Tareas</h1>
+                <div class="Titulo-Encabezado">
+                    <h1>🚀 Centro de Tareas</h1>
+                    <p>Todo lo que tenés pendiente, en un solo lugar</p>
+                </div>
                 <input id="Buscador-Tareas" placeholder="Buscar Tarea...">
                 <div class ="Botones-Encabezado">
                     <button id="Modo-Claro"><i data-lucide="sun"></i></button>
@@ -76,49 +86,56 @@
                     <div id="Agregar-Tarea-Der">
                         <div class="select-container">
                             <select id="Tipo-Btn">
-                                <option value="Tipo" selected>Seleccione tipo de tarea</option>
+                                <option value="" selected>Seleccione tipo de tarea</option>
                                 <option value="Trabajo">Trabajo</option>
                                 <option value="Salud">Salud</option>
                                 <option value="Personal">Personal</option>
                                 <option value="Estudio">Estudio</option>
                         </select>
                         </div>
-                        <button class="fecha-btn">
-                        <i data-lucide="calendar"></i>
-                        </button>
-
-                        <input class="fecha" type="date" hidden>
-
-                            <span class="fecha-texto"></span>
+                        
                         <select id="Prioridad-Btn">
-                            <option value="Prioridad" selected>⚡️Prioridad</option>
+                            <option value="" selected>⚡️Prioridad</option>
                             <option value="Urgente">Urgente</option>
                             <option value="Alta">Alta</option>
                             <option value="Media">Media</option>
                             <option value="Baja">Baja</option>
                         </select> 
-                        <button id="Agregar-Tarea-Btn">➕Agregar</button>
+                        <button id="Agregar-Tarea-Btn"><i data-lucide="plus"></i>  Agregar</button>
                     </div>
                 </div>
                 <div id="Filtros">
-                    <div id="Filtros-Izq">
-                    <button id="Filtro-Todas">Todas</button>
-                    <button id="Filtro-Pendientes">Pendientes</button>
-                    <button id="Filtro-Completadas">Completadas</button>
-                    </div>
-                    <div id="Filtros-Der">
-                        <button id="Marcar-Completadas-Btn" hidden>
-    <i data-lucide="check-check"></i>
-    Marcar completadas
-</button>
-                        <select id="Ordenamiento-Tareas"  >
-                            <option value="" selected> Ordenar por: </option>
-                            <option value="Fecha-Limite">Fecha Límite</option>
-                            <option value="Prioridad">Prioridad</option>
-                            <option value="Favoritos">Favoritos</option>
-                        </select>
-                    </div>
-                </div>
+    <div id="Filtros-Izq">
+        <button id="Filtro-Todas">
+            <i data-lucide="list"></i>
+            Todas
+        </button>
+
+        <button id="Filtro-Pendientes">
+            <i data-lucide="clock-3"></i>
+            Pendientes
+        </button>
+
+        <button id="Filtro-Completadas">
+            <i data-lucide="check-circle-2"></i>
+            Completadas
+        </button>
+    </div>
+
+    <div id="Filtros-Der">
+        <button id="Marcar-Completadas-Btn" hidden>
+            <i data-lucide="check-check"></i>
+            Marcar completadas
+        </button>
+
+        <select id="Ordenamiento-Tareas">
+            <option value="" selected>↕ Ordenar por</option>
+            <option value="Fecha-Limite">📅 Fecha límite</option>
+            <option value="Prioridad">⚡ Prioridad</option>
+            <option value="Favoritos">❤️ Favoritos</option>
+        </select>
+    </div>
+</div>
                 <div id="Contenedor-Tareas">
                     <ul id="Lista-Tareas">
                     </ul>

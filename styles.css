@@ -74,12 +74,13 @@ CONTADORES
 .Columna-Numeros {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 23px;
     color: #6b7280;
     font-weight: bold;
 }
 
 .Columna-Numeros span {
+    margin-top: auto;
     width: 28px;
     height: 28px;
 
@@ -801,4 +802,474 @@ body.dark-mode #Modo-Claro {
     font-size: 13px;
     font-weight: 600;
     color: #6b7280;
+}
+
+/* ==========================
+BOTÓN CALENDARIO
+========================== */
+
+.fecha-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    margin-right: 8px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    color: var(--principal);
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.fecha-btn:hover {
+    background: #ede9fe;
+    color: #5930cc;
+    transform: translateY(-2px);
+}
+
+.fecha-btn:active {
+    transform: translateY(0);
+}
+
+.fecha-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+.fecha-texto {
+    display: inline-flex;
+    align-items: center;
+
+    min-width: 70px;
+    margin-right: 12px;
+
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    background: #f3efff;
+    color: var(--principal);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ==========================
+BOTONES DE FILTRO
+========================== */
+
+#Filtro-Todas,
+#Filtro-Pendientes,
+#Filtro-Completadas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+
+    background: var(--panel);
+    color: var(--texto);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+#Filtro-Todas:hover,
+#Filtro-Pendientes:hover,
+#Filtro-Completadas:hover {
+    background: #ede9fe;
+    color: var(--principal);
+    border-color: var(--principal);
+    transform: translateY(-2px);
+}
+
+#Filtro-Todas:active,
+#Filtro-Pendientes:active,
+#Filtro-Completadas:active {
+    transform: translateY(0);
+}
+
+#Filtro-Todas svg,
+#Filtro-Pendientes svg,
+#Filtro-Completadas svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+/* ==========================
+FILTRO ACTIVO
+========================== */
+
+#Filtro-Todas.activo,
+#Filtro-Pendientes.activo,
+#Filtro-Completadas.activo {
+    background: var(--principal);
+    color: white;
+    border-color: var(--principal);
+    box-shadow: 0 6px 14px rgba(109, 60, 245, .25);
+}
+
+#Filtro-Todas.activo svg,
+#Filtro-Pendientes.activo svg,
+#Filtro-Completadas.activo svg {
+    color: white;
+}
+
+/* ==========================
+ESTADOS DE TAREAS (BARRA IZQUIERDA)
+========================== */
+
+.Estado-Tareas li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 14px;
+    margin-bottom: 8px;
+
+    border-radius: 10px;
+
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.Estado-Tareas li:hover {
+    background: var(--hover);
+    color: var(--principal);
+}
+
+.Estado-Tareas li svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+    color: var(--principal);
+}
+
+.Estado-Tareas li:nth-child(1) svg {
+    color: #6d3cf5;   /* Todas */
+}
+
+.Estado-Tareas li:nth-child(2) svg {
+    color: #f59e0b;   /* Pendientes */
+}
+
+.Estado-Tareas li:nth-child(3) svg {
+    color: #22c55e;   /* Completadas */
+}
+
+/* ==========================
+CÍRCULOS DE ETIQUETAS
+========================== */
+
+.circulo {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.circulo-trabajo {
+    background: #3b82f6;
+}
+
+.circulo-estudio {
+    background: #22c55e;
+}
+
+.circulo-personal {
+    background: #8b5cf6;
+}
+
+.circulo-salud {
+    background: #f59e0b;
+}
+
+.circulo-trabajo,
+.circulo-estudio,
+.circulo-personal,
+.circulo-salud {
+    box-shadow: 0 0 8px rgba(0, 0, 0, .15);
+}
+
+/* ==========================
+ICONO "MIS TAREAS"
+========================== */
+
+.Barra-Izq h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Barra-Izq h2 svg {
+    width: 28px;
+    height: 28px;
+
+    color: var(--principal);
+    stroke-width: 2.2;
+
+    padding: 8px;
+    border-radius: 12px;
+
+    background: rgba(109, 60, 245, 0.12);
+
+    box-shadow: 0 4px 12px rgba(109, 60, 245, 0.18);
+}
+
+.Barra-Izq h2 svg {
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.Barra-Izq:hover h2 svg {
+    transform: rotate(-8deg) scale(1.08);
+    box-shadow: 0 6px 18px rgba(109, 60, 245, 0.28);
+}
+
+
+/* ==========================
+PROGRESO GENERAL
+========================== */
+
+#Barra-Progreso {
+    margin-top: 25px;
+    padding: 20px;
+
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+
+    box-shadow: 0 6px 18px var(--sombra);
+}
+
+#Barra-Progreso-Header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+#Barra-Progreso-Header svg {
+    width: 22px;
+    height: 22px;
+
+    color: var(--principal);
+    stroke-width: 2.2;
+}
+
+#Barra-Progreso h3 {
+    margin: 0;
+    color: var(--texto);
+    font-size: 18px;
+}
+
+#Barra-Entera {
+    width: 100%;
+    height: 12px;
+
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+#Barra-Completada {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(90deg, #8b5cf6, #6d3cf5);
+
+    border-radius: inherit;
+
+    transition: width .4s ease;
+}
+
+#Contador-Tareas-Completadas {
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#Porcentaje-Progreso {
+    margin-top: 8px;
+
+    text-align: center;
+
+    color: var(--principal);
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.Titulo-Encabezado {
+    display: flex;
+    flex-direction: column;
+}
+
+.Titulo-Encabezado h1 {
+    margin: 0;
+    font-size: 30px;
+    color: var(--texto);
+}
+
+.Titulo-Encabezado p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--texto-secundario);
+    font-weight: 400;
+}
+
+#Filtros-Der {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#Ordenamiento-Tareas {
+    min-width: 170px;
+}
+
+#Marcar-Completadas-Btn {
+    white-space: nowrap;
+}
+
+/* ==========================
+BOTÓN FAVORITO
+========================== */
+
+.favorito-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #9ca3af;
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.favorito-btn:hover {
+    background: #ffe4e6;
+    color: #e11d48;
+    transform: translateY(-2px);
+}
+
+.favorito-btn:active {
+    transform: scale(0.95);
+}
+
+.favorito-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
+.favorito-btn.activo {
+    background: #ffe4e6;
+    color: #e11d48;
+    box-shadow: 0 4px 10px rgba(225, 29, 72, .25);
+}
+
+.favorito-btn.activo:hover {
+    background: #fecdd3;
+}
+
+.favorito-btn.activo svg {
+    fill: currentColor;
+    animation: favoritoPop .25s ease;
+}
+
+@keyframes favoritoPop {
+    0% {
+        transform: scale(.6);
+    }
+    70% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #9ca3af;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: .2s ease;
+}
+
+/* cuando está marcado */
+.checkbox:checked {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+}
+
+/* crear el tilde */
+.checkbox:checked::after {
+    content: "✓";
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.selector-fecha {
+    position: relative;
+}
+
+.fecha {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.fecha-texto {
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.contenedor-fecha {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
