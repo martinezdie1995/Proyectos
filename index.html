@@ -11,44 +11,71 @@
         <section class = "Barra-Izq">
             <h2 ><i data-lucide="notebook-pen"></i>   Mis Tareas</h2>
             <hr>
-            <div class="Columnas-Tareas">
-                <ul class="Estado-Tareas">
-                    <li><i data-lucide="list-todo"></i>Todas </li>
-                    <li><i data-lucide="clock"></i>Pendientes </li>
-                    <li> <i data-lucide="circle-check-big"></i>Completadas </li>
-                    
-                </ul>
-                <div class="Columna-Numeros">
-                    <span id="tareastodas">
-                    </span>
-                    <span id="tareaspendientes">
-                    </span>
-                    <span id="tareascompletadas">
-                    </span>
-                    
-                </div>
-            </div>
+            <div class="Estado-Tareas">
+
+    <div class="Estado-Item">
+        <div class="Estado-Nombre">
+            <i data-lucide="list-todo"></i>
+            Todas
+        </div>
+        <span id="tareastodas">0</span>
+    </div>
+
+    <div class="Estado-Item">
+        <div class="Estado-Nombre">
+            <i data-lucide="clock"></i>
+            Pendientes
+        </div>
+        <span id="tareaspendientes">0</span>
+    </div>
+
+    <div class="Estado-Item">
+        <div class="Estado-Nombre">
+            <i data-lucide="circle-check-big"></i>
+            Completadas
+        </div>
+        <span id="tareascompletadas">0</span>
+    </div>
+
+</div>
             <hr>
             <div>
                 <h3 >Etiquetas</h3>
-                    <div class="Columnas-Tareas">
-                    <ul class="Etiquetas">
-                        <li><span class="circulo circulo-trabajo"></span>Trabajo</li>
-                        <li><span class="circulo circulo-estudio"></span>Estudio</li>
-                        <li><span class="circulo circulo-personal"></span>Personal</li>
-                        <li><span class="circulo circulo-salud"></span>Salud</li>
-                    </ul>
-                <div class="Columna-Numeros">
-                    <span class="trabajo">
-                    </span>
-                    <span class="estudio">
-                    </span>
-                    <span class="personal">
-                    </span>
-                    <span class="salud">
-                    </span>
-                </div>
-                    </div>
+                    <div class="Etiquetas">
+
+    <div class="Etiqueta-Item">
+        <div>
+            <span class="circulo circulo-trabajo"></span>
+            Trabajo
+        </div>
+        <span class="trabajo">0</span>
+    </div>
+
+    <div class="Etiqueta-Item">
+        <div>
+            <span class="circulo circulo-estudio"></span>
+            Estudio
+        </div>
+        <span class="estudio">0</span>
+    </div>
+
+    <div class="Etiqueta-Item">
+        <div>
+            <span class="circulo circulo-personal"></span>
+            Personal
+        </div>
+        <span class="personal">0</span>
+    </div>
+
+    <div class="Etiqueta-Item">
+        <div>
+            <span class="circulo circulo-salud"></span>
+            Salud
+        </div>
+        <span class="salud">0</span>
+    </div>
+
+</div>
             </div>
             <div id="Barra-Progreso">
     <div class="Progreso-Header">
@@ -65,7 +92,6 @@
     </h4>
 </div>
 
-</div>
         </section>
         <section class="Barra-Der">
             <div id="Encabezado">

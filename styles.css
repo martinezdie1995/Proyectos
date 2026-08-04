@@ -34,53 +34,37 @@ BARRA IZQUIERDA
     margin: 18px 0;
 }
 
-/* ===========================
-LISTAS
-=========================== */
-
-.Columnas-Tareas {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.Estado-Tareas,
-.Etiquetas {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.Estado-Tareas li,
-.Etiquetas li {
-    padding: 10px 12px;
-    margin-bottom: 6px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .2s;
-    font-weight: 500;
-}
-
-.Estado-Tareas li:hover,
-.Etiquetas li:hover {
-    background: #f3efff;
-    color: #6d3cf5;
-}
 
 /* ===========================
 CONTADORES
 =========================== */
-
-.Columna-Numeros {
+.Estado-Tareas {
     display: flex;
     flex-direction: column;
-    gap: 23px;
-    color: #6b7280;
-    font-weight: bold;
+    gap: 8px;
+    padding: 0;
 }
 
-.Columna-Numeros span {
-    margin-top: auto;
+
+.Estado-Item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+
+.Estado-Item li {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.Estado-Item span {
     width: 28px;
     height: 28px;
 
@@ -88,11 +72,15 @@ CONTADORES
     justify-content: center;
     align-items: center;
 
+    border-radius: 50%;
+
     background: #f3efff;
     color: #6d3cf5;
 
-    border-radius: 50%;
+    font-weight: bold;
 }
+
+
 
 /* ===========================
 PROGRESO
@@ -242,6 +230,7 @@ BUSCADOR
 
 
 #Agregar-Tarea-Der button {
+    border: 1px;
     border-radius: 1px solid grey;
     padding: 5px;
     display: flex;
@@ -393,7 +382,7 @@ ESTILOS DE CADA TAREA
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 2px;
-    height: 25px;
+    height: 50px;
     margin-right: 5px;
 }
 
@@ -797,12 +786,7 @@ body.dark-mode #Modo-Claro {
     color: #facc15;
 }
 
-.fecha-texto {
-    margin-left: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #6b7280;
-}
+
 
 /* ==========================
 BOTÓN CALENDARIO
@@ -1254,22 +1238,132 @@ BOTÓN FAVORITO
 
 .selector-fecha {
     position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
 .fecha {
     position: absolute;
+    inset: 0;
     opacity: 0;
-    width: 1px;
-    height: 1px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .fecha-texto {
-    font-size: 14px;
-    color: #9ca3af;
+    display: inline-flex;
+    align-items: center;
+    min-width: 70px;
+    padding: 4px 8px;
+    margin-left: 8px;
+
+    border-radius: 6px;
+
+    background: #f3efff;
+    color: var(--principal);
+
+    font-size: 13px;
+    font-weight: 600;
 }
 
 .contenedor-fecha {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.Etiquetas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+
+.Etiqueta-Item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+
+.Etiqueta-Item li {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--texto);
+    font-weight: 500;
+}
+
+
+.Etiqueta-Item span:not(.circulo) {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #f3efff;
+    color: var(--principal);
+
+    font-weight: bold;
+}
+
+/* ==========================
+ALINEACIÓN BARRA IZQUIERDA
+========================== */
+
+.Estado-Tareas,
+.Etiquetas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 0;
+    margin: 0;
+}
+
+
+.Estado-Item,
+.Etiqueta-Item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+
+.Estado-Nombre {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.Estado-Item span,
+.Etiqueta-Item > span:not(.circulo) {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #f3efff;
+    color: #6d3cf5;
+
+    font-weight: bold;
 }

@@ -70,7 +70,11 @@ lucide.createIcons();
         `
     ;
 listaTareas.appendChild(nuevaTarea);
-lucide.createIcons();
+lucide.createIcons({
+    attrs: {
+        "stroke-width": 2
+    }
+});
 return nuevaTarea;
 }
 
@@ -159,21 +163,24 @@ agregarTareaBtn.addEventListener("click", () => {
         alert("Por favor, ingrese una tarea.");
         return;
     }
+
+
+
     crearContenedorTarea();
     darEstilo();
     darPrioridad();
     actualizarProgreso();
     if(tipoBtn.value === "Trabajo" ) {
-trabajo.textContent = trabajo.textContent ++;
+trabajo.textContent = Number(   trabajo.textContent ||0) + 1 ;
     }
     if(tipoBtn.value === "Estudio" ) {
-        estudio.textContent ++;
+        estudio.textContent = Number(   estudio.textContent ||0) + 1 ;
     }
     if(tipoBtn.value === "Personal" ) {
-        personal.textContent ++;
+        personal.textContent = Number(   personal.textContent ||0) + 1 ;
     }
     if(tipoBtn.value === "Salud" ) {
-        salud.textContent ++;
+        salud.textContent = Number(   salud.textContent ||0) + 1 ;
     }
     inputTarea.value = "";
     prioridadBtn.value = "Prioridad";
@@ -195,7 +202,7 @@ listaTareas.addEventListener("click", (e) => {
 if (confirm("¿Seguro que quieres eliminar esta tarea?")) {
     tarea.remove();
     contadorTareas.textContent = listaTareas.children.length;
-    tareascompletadas.textContent == listaTareas.querySelectorAll(".TareaCompletada").length;
+    tareascompletadas.textContent = listaTareas.querySelectorAll(".TareaCompletada").length;
         const tipo = tarea.querySelector(".tipo-tarea").textContent;
         switch (tipo) {
             case "Trabajo":
