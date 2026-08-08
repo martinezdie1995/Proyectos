@@ -24,11 +24,34 @@ const personal = document.querySelector(".personal");
 const salud = document.querySelector(".salud");
 const ordenamientoTareas = document.getElementById("Ordenamiento-Tareas")
 
+let tareas = [];
+let TareasGuardadas = JSON.parse(localStorage.setItem("tareas","tarea"));
+tareas.push(TareasGuardadas);
+tareas.forEach(tarea=>{
+
+})
 actualizarBotonMarcar();
 lucide.createIcons();
 //=============================FUNCIONES===================================
 
+function GuardarTareaLocal(){
+    let textoTarea = getElementById("texto-tarea");
+    let tipoTarea = getElementById("tipo-tarea");
+    let prioridadTarea = getElementById("prioridad");
+    let favoritoTarea = getElementById("favorito-btn");
 
+    nuevaTarea.forEach(item=>{
+        let tareaGuardada = {
+            checkbox = item.checkbox.checked,
+            texto = item.textoTarea.textContent,
+            fecha = item.tipoTarea.textContent,
+            prioridad = item.prioridadTarea.textContent,
+            favorito = item.favoritoBtn.classList.contains("activo")
+    }
+    })
+    tareas.push(tareaGuardada);
+    
+}
     function crearContenedorTarea() {
 
     const nuevaTarea = document.createElement("li");
