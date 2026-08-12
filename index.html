@@ -1,182 +1,469 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta  name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-    <link href="styles.css" rel="stylesheet" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Centro de Tareas - Lista de tareas personal</title>
+
+    <meta
+        name="description"
+        content="Organiza tus tareas, prioridades y progreso con Centro de Tareas. Gestiona pendientes, completadas y etiquetas fácilmente."
+    >
+
+    <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
-    <section id = "Contenedor-Padre">
-        <section class = "Barra-Izq">
-            <h2 ><i data-lucide="notebook-pen"></i>   Mis Tareas</h2>
-            <hr>
-            <div class="Estado-Tareas">
 
-    <div class="Estado-Item">
-        <div class="Estado-Nombre">
-            <i data-lucide="list-todo"></i>
-            Todas
-        </div>
-        <span id="tareastodas">0</span>
-    </div>
+<section id="Contenedor-Padre">
 
-    <div class="Estado-Item">
-        <div class="Estado-Nombre">
-            <i data-lucide="clock"></i>
-            Pendientes
-        </div>
-        <span id="tareaspendientes">0</span>
-    </div>
+    <!-- ================= BARRA LATERAL ================= -->
 
-    <div class="Estado-Item">
-        <div class="Estado-Nombre">
-            <i data-lucide="circle-check-big"></i>
-            Completadas
-        </div>
-        <span id="tareascompletadas">0</span>
-    </div>
+    <aside class="Barra-Izq">
 
-</div>
-            <hr>
-            <div>
-                <h3 >Etiquetas</h3>
-                    <div class="Etiquetas">
+        <h1>
+            <i data-lucide="notebook-pen" aria-hidden="true"></i>
+            Mis Tareas
+        </h1>
 
-    <div class="Etiqueta-Item">
-        <div>
-            <span class="circulo circulo-trabajo"></span>
-            Trabajo
-        </div>
-        <span class="trabajo">0</span>
-    </div>
+        <hr>
 
-    <div class="Etiqueta-Item">
-        <div>
-            <span class="circulo circulo-estudio"></span>
-            Estudio
-        </div>
-        <span class="estudio">0</span>
-    </div>
+        <nav aria-label="Estados de tareas">
 
-    <div class="Etiqueta-Item">
-        <div>
-            <span class="circulo circulo-personal"></span>
-            Personal
-        </div>
-        <span class="personal">0</span>
-    </div>
+            <ul class="Estado-Tareas">
 
-    <div class="Etiqueta-Item">
-        <div>
-            <span class="circulo circulo-salud"></span>
-            Salud
-        </div>
-        <span class="salud">0</span>
-    </div>
+                <li>
+                    <div class="item-menu">
+                        <i data-lucide="list-todo" aria-hidden="true"></i>
+                        <span>Todas</span>
+                    </div>
 
-</div>
-            </div>
-            <div id="Barra-Progreso">
-    <div class="Progreso-Header">
-        <span>Progreso</span>
-        <span id="Porcentaje-Progreso">0%</span>
-    </div>
+                    <span class="contador-menu" id="tareastodas">0</span>
+                </li>
 
-    <div id="Barra-Entera">
-        <div id="Barra-Completada"></div>
-    </div>
+                <li>
+                    <div class="item-menu">
+                        <i data-lucide="clock" aria-hidden="true"></i>
+                        <span>Pendientes</span>
+                    </div>
 
-    <h4 id="Contador-Tareas-Completadas">
-        0 de 0 tareas completadas
-    </h4>
-</div>
+                    <span class="contador-menu" id="tareaspendientes">0</span>
+                </li>
+
+                <li>
+                    <div class="item-menu">
+                        <i data-lucide="circle-check-big" aria-hidden="true"></i>
+                        <span>Completadas</span>
+                    </div>
+
+                    <span class="contador-menu" id="tareascompletadas">0</span>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <hr>
+
+        <!-- ================= ETIQUETAS ================= -->
+
+        <section aria-labelledby="titulo-etiquetas">
+
+            <h2 id="titulo-etiquetas">
+                Etiquetas
+            </h2>
+
+            <ul class="Etiquetas">
+
+                <li>
+                    <div class="item-menu">
+                        <span class="circulo circulo-trabajo"></span>
+                        <span>Trabajo</span>
+                    </div>
+
+                    <span class="contador-menu trabajo">0</span>
+                </li>
+
+                <li>
+                    <div class="item-menu">
+                        <span class="circulo circulo-estudio"></span>
+                        <span>Estudio</span>
+                    </div>
+
+                    <span class="contador-menu estudio">0</span>
+                </li>
+
+                <li>
+                    <div class="item-menu">
+                        <span class="circulo circulo-personal"></span>
+                        <span>Personal</span>
+                    </div>
+
+                    <span class="contador-menu personal">0</span>
+                </li>
+
+                <li>
+                    <div class="item-menu">
+                        <span class="circulo circulo-salud"></span>
+                        <span>Salud</span>
+                    </div>
+
+                    <span class="contador-menu salud">0</span>
+                </li>
+
+            </ul>
 
         </section>
-        <section class="Barra-Der">
-            <div id="Encabezado">
-                <div class="Titulo-Encabezado">
-                    <h1>🚀 Centro de Tareas</h1>
-                    <p>Todo lo que tenés pendiente, en un solo lugar</p>
+
+        <!-- ================= PROGRESO ================= -->
+
+        <section id="Barra-Progreso" aria-label="Progreso de tareas">
+
+            <div class="Progreso-Header">
+
+                <div class="Titulo-Progreso">
+                    <i data-lucide="chart-no-axes-column" aria-hidden="true"></i>
+                    <span>Progreso</span>
                 </div>
-                <input id="Buscador-Tareas" placeholder="Buscar Tarea...">
-                <div class ="Botones-Encabezado">
-                    <button id="Modo-Claro"><i data-lucide="sun"></i></button>
-                    <button id="Modo-Oscuro"><i data-lucide="moon"></i>  </button>
-                    
-                </div>
+
+                <span id="Porcentaje-Progreso">
+                    0%
+                </span>
+
             </div>
-            <main>
-                <div id="Barra-agregar-Tareas">
-                    <input id="Input-Tarea" placeholder="¿Qué tarea quieres agregar?">
-                    <div id="Agregar-Tarea-Der">
-                        <div class="select-container">
-                            <select id="Tipo-Btn">
-                                <option value="" selected>Seleccione tipo de tarea</option>
-                                <option value="Trabajo">Trabajo</option>
-                                <option value="Salud">Salud</option>
-                                <option value="Personal">Personal</option>
-                                <option value="Estudio">Estudio</option>
-                        </select>
-                        </div>
-                        
-                        <select id="Prioridad-Btn">
-                            <option value="" selected>⚡️Prioridad</option>
-                            <option value="Urgente">Urgente</option>
-                            <option value="Alta">Alta</option>
-                            <option value="Media">Media</option>
-                            <option value="Baja">Baja</option>
-                        </select> 
-                        <button id="Agregar-Tarea-Btn"><i data-lucide="plus"></i>  Agregar</button>
+
+            <div
+                id="Barra-Entera"
+                role="progressbar"
+                aria-label="Progreso de tareas completadas"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+            >
+                <div id="Barra-Completada"></div>
+            </div>
+
+            <p id="Contador-Tareas-Completadas">
+                0 de 0 tareas completadas
+            </p>
+
+        </section>
+
+    </aside>
+
+
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+
+    <section class="Barra-Der">
+
+        <!-- ================= ENCABEZADO ================= -->
+
+        <header id="Encabezado">
+
+            <div class="Titulo-Encabezado">
+
+                <h2>
+                    🚀 Centro de Tareas
+                </h2>
+
+                <p>
+                    Todo lo que tenés pendiente, en un solo lugar
+                </p>
+
+            </div>
+
+            <label class="sr-only" for="Buscador-Tareas">
+                Buscar tareas
+            </label>
+
+            <input
+                id="Buscador-Tareas"
+                type="search"
+                placeholder="Buscar tarea..."
+            >
+
+            <div class="Botones-Encabezado">
+
+                <button
+                    id="Modo-Claro"
+                    aria-label="Activar modo claro"
+                    type="button"
+                >
+                    <i data-lucide="sun" aria-hidden="true"></i>
+                </button>
+
+                <button
+                    id="Modo-Oscuro"
+                    aria-label="Activar modo oscuro"
+                    type="button"
+                >
+                    <i data-lucide="moon" aria-hidden="true"></i>
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <main>
+
+            <!-- ================= FORMULARIO ================= -->
+
+            <section
+                id="Barra-agregar-Tareas"
+                aria-label="Agregar o editar tarea"
+            >
+
+                <label class="sr-only" for="Input-Tarea">
+                    Nueva tarea
+                </label>
+
+                <input
+                    id="Input-Tarea"
+                    type="text"
+                    placeholder="¿Qué tarea quieres agregar?"
+                >
+
+                <div id="Agregar-Tarea-Der">
+
+                    <!-- TIPO -->
+
+                    <label class="sr-only" for="Tipo-Btn">
+                        Tipo de tarea
+                    </label>
+
+                    <select id="Tipo-Btn">
+
+                        <option value="">
+                            Seleccione tipo de tarea
+                        </option>
+
+                        <option value="Trabajo">
+                            Trabajo
+                        </option>
+
+                        <option value="Salud">
+                            Salud
+                        </option>
+
+                        <option value="Personal">
+                            Personal
+                        </option>
+
+                        <option value="Estudio">
+                            Estudio
+                        </option>
+
+                    </select>
+
+
+                    <!-- PRIORIDAD -->
+
+                    <label class="sr-only" for="Prioridad-Btn">
+                        Prioridad
+                    </label>
+
+                    <select id="Prioridad-Btn">
+
+                        <option value="">
+                            ⚡ Prioridad
+                        </option>
+
+                        <option value="Urgente">
+                            Urgente
+                        </option>
+
+                        <option value="Alta">
+                            Alta
+                        </option>
+
+                        <option value="Media">
+                            Media
+                        </option>
+
+                        <option value="Baja">
+                            Baja
+                        </option>
+
+                    </select>
+
+
+                    <!-- FECHA -->
+
+                    <div class="selector-fecha">
+
+                        <button
+                            type="button"
+                            id="Fecha-Formulario-Btn"
+                            class="fecha-btn"
+                            aria-label="Seleccionar fecha límite"
+                        >
+                            <i data-lucide="calendar" aria-hidden="true"></i>
+                        </button>
+
+                        <input
+                            type="date"
+                            id="Fecha-Formulario"
+                            class="fecha-formulario"
+                        >
+
+                        <span id="Fecha-Formulario-Texto">
+                            Sin fecha límite
+                        </span>
+
                     </div>
+
+
+                    <!-- GUARDAR / AGREGAR -->
+
+                    <button
+                        id="Agregar-Tarea-Btn"
+                        type="button"
+                    >
+
+                        <i data-lucide="plus" aria-hidden="true"></i>
+
+                        Agregar
+
+                    </button>
+
+
+                    <!-- CANCELAR EDICIÓN -->
+
+                    <button
+                        id="Cancelar-Edicion-Btn"
+                        type="button"
+                        hidden
+                    >
+
+                        <i data-lucide="x" aria-hidden="true"></i>
+
+                        Cancelar
+
+                    </button>
+
                 </div>
-                <div id="Filtros">
-    <div id="Filtros-Izq">
-        <button id="Filtro-Todas">
-            <i data-lucide="list"></i>
-            Todas
-        </button>
 
-        <button id="Filtro-Pendientes">
-            <i data-lucide="clock-3"></i>
-            Pendientes
-        </button>
+            </section>
 
-        <button id="Filtro-Completadas">
-            <i data-lucide="check-circle-2"></i>
-            Completadas
-        </button>
-    </div>
 
-    <div id="Filtros-Der">
-        <button id="Marcar-Completadas-Btn" hidden>
-            <i data-lucide="check-check"></i>
-            Marcar completadas
-        </button>
+            <!-- ================= FILTROS ================= -->
 
-        <select id="Ordenamiento-Tareas">
-            <option value="" selected>↕ Ordenar por</option>
-            <option value="Fecha-Limite">📅 Fecha límite</option>
-            <option value="Prioridad">⚡ Prioridad</option>
-            <option value="Favoritos">❤️ Favoritos</option>
-        </select>
-    </div>
-</div>
-                <div id="Contenedor-Tareas">
-                    <ul id="Lista-Tareas">
-                    </ul>
-                
+            <section
+                id="Filtros"
+                aria-label="Filtros de tareas"
+            >
+
+                <div id="Filtros-Izq">
+
+                    <button
+                        id="Filtro-Todas"
+                        type="button"
+                    >
+                        <i data-lucide="list" aria-hidden="true"></i>
+                        Todas
+                    </button>
+
+                    <button
+                        id="Filtro-Pendientes"
+                        type="button"
+                    >
+                        <i data-lucide="clock-3" aria-hidden="true"></i>
+                        Pendientes
+                    </button>
+
+                    <button
+                        id="Filtro-Completadas"
+                        type="button"
+                    >
+                        <i data-lucide="check-circle-2" aria-hidden="true"></i>
+                        Completadas
+                    </button>
+
                 </div>
+
+
+                <div id="Filtros-Der">
+
+
+
+                    <label
+                        class="sr-only"
+                        for="Ordenamiento-Tareas"
+                    >
+                        Ordenar tareas
+                    </label>
+
+                    <select id="Ordenamiento-Tareas">
+
+                        <option value="">
+                            ↕ Ordenar por
+                        </option>
+
+                        <option value="Fecha-Limite">
+                            📅 Fecha límite
+                        </option>
+
+                        <option value="Prioridad">
+                            ⚡ Prioridad
+                        </option>
+
+                        <option value="Favoritos">
+                            ❤️ Favoritos
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= LISTA DE TAREAS ================= -->
+
+            <section
+                id="Contenedor-Tareas"
+                aria-label="Lista de tareas"
+            >
+
+                <ul id="Lista-Tareas">
+                </ul>
+
+            </section>
+
         </main>
-        <div id="Contador-tareas">
-            
-        </div>
+
+
+        <!-- ================= PIE ================= -->
+
+        <footer id="Contador-tareas">
+
+            <button
+                id="borrarCompletadas"
+                type="button"
+            >
+                <i data-lucide="trash-2" aria-hidden="true"></i>
+                Borrar Completadas
+            </button>
+
+        </footer>
+
     </section>
+
 </section>
 
 
+<!-- ================= SCRIPTS ================= -->
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
+
+
+
+
+

@@ -1,1369 +1,2280 @@
-#Contenedor-Padre{
-    display: flex;
-    width: auto;
-    height: auto;
+/* ==========================================================================
+   1. VARIABLES DE ESTILO Y TEMAS
+   ========================================================================== */
 
-}
-
-/* ===========================
-BARRA IZQUIERDA
-=========================== */
-
-.Barra-Izq {
-    width: 280px;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px var(--sombra);
-}
-
-.Barra-Izq h2 {
-    color: var(--principal);
-    margin-bottom: 15px;
-    font-size: 26px;
-}
-
-.Barra-Izq h3 {
-    color: var(--texto-secundario);
-    margin: 15px 0 10px;
-}
-
-.Barra-Izq hr {
-    border: none;
-    height: 1px;
-    background: var(--borde);
-    margin: 18px 0;
-}
-
-
-/* ===========================
-CONTADORES
-=========================== */
-.Estado-Tareas {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 0;
-}
-
-
-.Estado-Item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-}
-
-
-.Estado-Item li {
-    list-style: none;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-
-.Estado-Item span {
-    width: 28px;
-    height: 28px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: #f3efff;
-    color: #6d3cf5;
-
-    font-weight: bold;
-}
-
-
-
-/* ===========================
-PROGRESO
-=========================== */
-
-#Barra-Progreso {
-    margin-top: 25px;
-    padding: 15px;
-    background: #f8f7ff;
-    border-radius: 12px;
-    border: 1px solid var(--borde);
-}
-
-#Barra-Progreso h3 {
-    margin: 10px 0;
-}
-
-#Barra-Entera {
-    width: 100%;
-    height: 10px;
-    background: #e5e7eb;
-    border-radius: 999px;
-    overflow: hidden;
-}
-
-#Barra-Completada {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(90deg, #8b5cf6, #6d3cf5);
-    border-radius: inherit;
-    transition: width .4s ease;
-}
-
-#Contador-Tareas-Completadas {
-    margin-top: 10px;
-    text-align: center;
-    color: #6d3cf5;
-}
-/* ===========================
-BARRA DERECHA
-=========================== */
-
-.Barra-Der {
-    width: 100%;
-    padding: 18px;
-    background-color: #ece9f7;
-}
-
-
-
-/* ===========================
-ENCABEZADO
-=========================== */
-
-#Encabezado {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.Botones-Encabezado {
-    display: flex;
-    gap: 10px;
-}
-
-#Modo-Claro,
-#Modo-Oscuro {
-    width: 42px;
-    height: 42px;
-    border: 1px solid var(--borde);
-    border-radius: 50%;
-    background: var(--panel);
-    cursor: pointer;
-    transition: .2s;
-}
-
-#Modo-Claro:hover,
-#Modo-Oscuro:hover {
-    background: var(--principal);
-    color: white;
-}
-
-/* ===========================
-BUSCADOR
-=========================== */
-
-#Encabezado input {
-    flex: 1;
-    max-width: 350px;
-    padding: 10px;
-    border: 1px solid var(--borde);
-    border-radius: 10px;
-    outline: none;
-}
-
-#Encabezado input:focus {
-    border-color: var(--principal);
-    box-shadow: 0 0 6px var(--shadow);
-}
-
-#Barra-agregar-Tareas {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-
-    background: var(--panel);
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-#Encabezado input {
-    width: auto;
-    height: auto;
-    border-radius: 1px solid grey ;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-#Input-Tarea {
-    flex: 1;
-    max-width: 350px;
-    padding: 10px;
-    border: 1px solid var(--borde);
-    border-radius: 10px;
-    outline: none;
-}
-
-#Input-Tarea:focus {
-    border-color: var(--principal);
-    box-shadow: 0 0 6px var(--shadow);
-}
-
-#Agregar-Tarea-Der {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-
-#Contenedor-Tareas span {
-    background-color:white ;
-}
-
-
-
-
-#Agregar-Tarea-Der button {
-    border: 1px;
-    border-radius: 1px solid grey;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-
-/* ===========================
-SELECTS
-=========================== */
-
-#Tipo-Btn,
-#Ordenamiento-Tareas,
-#Prioridad-Btn {
-    padding: 10px 14px;
-    border: 1px solid var(--borde);
-    border-radius: 10px;
-    background: var(--panel);
-    cursor: pointer;
-    font-size: 14px;
-
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    transition: .2s;
-}
-
-#Tipo-Btn:hover,
-#Ordenamiento-Tareas:hover,
-#Prioridad-Btn:hover {
-    border-color: var(--principal);
-}
-
-#Tipo-Btn:focus,
-#Ordenamiento-Tareas:focus,
-#Prioridad-Btn:focus {
-    outline: none;
-    border-color: var(--principal);
-    box-shadow: 0 0 6px rgba(109,60,245,.25);
-}
-
-.select-container {
-position: relative;
-display: inline-block;
-}
-
-.select-container select {
-appearance: none;
-padding: 10px 40px 10px 10px;
-}
-
-.select-container::after {
-content: "▼";
-position: absolute;
-right: 12px;
-top: 50%;
-transform: translateY(-50%);
-pointer-events: none;
-}
-
-/* ===========================
-BOTÓN FECHA
-=========================== */
-
-#Fecha-Btn {
-    padding: 10px 14px;
-    border: 1px solid var(--borde);
-    border-radius: 10px;
-    background: var(--panel);
-    color: var(--texto);
-    cursor: pointer;
-    transition: .2s;
-}
-
-#Fecha-Btn:hover {
-    background: #f3efff;
-    border-color: var(--principal);
-    color: #6d3cf5;
-}
-
-/* ===========================
-BOTÓN AGREGAR
-=========================== */
-
-#Agregar-Tarea-Btn {
-    padding: 10px 18px;
-    border: none;
-    border-radius: 10px;
-
-    background: #6d3cf5;
-    color: white;
-
-    font-weight: bold;
-    cursor: pointer;
-    transition: .2s;
-}
-
-#Agregar-Tarea-Btn:hover {
-    background: #8b5cf6;
-    transform: translateY(-2px);
-}
-
-#Agregar-Tarea-Btn:active {
-    transform: translateY(0);
-}
-
-/* ===========================
-FILTROS
-=========================== */
-
-#Filtros {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-#Filtros-Izq {
-    display: flex;
-    gap: 10px;
-}
-
-#Filtros-Izq button {
-    padding: 8px 14px;
-    border: 1px solid var(--borde);
-    border-radius: 20px;
-    background: var(--panel);
-    cursor: pointer;
-    transition: .2s;
-}
-
-#Filtros-Izq button:hover {
-    background: var(--principal);
-    color: var(--texto);
-    border-color: #6d3cf5;
-}
-
-/*============================
-ESTILOS DE CADA TAREA 
-==============================*/
-
-.Tarea {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--panel);
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 2px;
-    height: 50px;
-    margin-right: 5px;
-}
-
-.TareaIzquierda {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: var(--panel);
-    height: 100%;
-    margin-left: 5px;
-}
-
-.TareaDerecha {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: var(--panel);
-    height: 100%;
-    margin-right: 5px;
-}
-
-.TipoTareaTrabajo {
-    background-color:  #acc4f1;
-    color: #3554b8;
-    width: auto;
-    height: 15px;
-    border-radius: 3px;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 5px;
-    margin-left: 15px;
-}
-
-.TipoTareaSalud {
-    background-color:  #f8e1c8;
-    color: #f59e08;
-    width: auto;
-    height: 15px;
-    border-radius: 3px;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 5px;
-    margin-left: 15px;
-}
-
-.TipoTareaPersonal {
-    background-color:  #d7c1f7;
-    color: #8B5CF6;
-    width: auto;
-    height: 15px;
-    border-radius: 3px;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 5px;
-    margin-left: 15px;
-}
-
-.TipoTareaEstudio {
-    background-color:  #c4fdd8;
-    color: #22a75a;
-    width: auto;
-    height: 15px;
-    border-radius: 3px;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 5px;
-    margin-left: 15px;
-}
-
-.texto-tarea {
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 15px;
-    width: auto;
-    height: auto;
-}
-.Tarea-Item {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/*============================
-MODO CLARO Y MODO OSCURO
-==============================*/
 :root {
-    --fondo: #ece9f7;
-    --panel: #ffffff;
-    --texto: #222;
-    --texto-secundario: #666;
-    --borde: #d1d5db;
-    --principal: #6d3cf5;
-    --hover: #f3efff;
-    --sombra: rgba(0,0,0,.35);
 
-    --barra: #353535;
+    /* ================= FONDO GENERAL ================= */
+
+    --bg-app: #f3f5fb;
+    --bg-card: #ffffff;
+    --bg-card-hover: #fafbff;
+
+    /* ================= SIDEBAR ================= */
+
+    --bg-sidebar: #15162b;
+    --bg-sidebar-hover: #222343;
+    --sidebar-text: #f8fafc;
+    --sidebar-muted: #a7adc4;
+    --sidebar-border: rgba(255, 255, 255, 0.08);
+
+    /* ================= TEXTOS ================= */
+
+    --text-primary: #172033;
+    --text-secondary: #5d6880;
+    --text-muted: #8993a8;
+
+    /* ================= BORDES ================= */
+
+    --border-color: #e2e6ef;
+    --border-light: #edf0f5;
+
+    /* ================= COLOR PRINCIPAL ================= */
+
+    --primary: #635bff;
+    --primary-hover: #5148e8;
+    --primary-light: #eeedff;
+    --primary-soft: #f5f4ff;
+
+    --gradient-primary:
+        linear-gradient(
+            135deg,
+            #635bff 0%,
+            #8b5cf6 100%
+        );
+
+    --gradient-sidebar:
+        linear-gradient(
+            180deg,
+            #17182f 0%,
+            #101122 100%
+        );
+
+    /* ================= ETIQUETAS ================= */
+
+    --tag-trabajo: #f97316;
+    --tag-estudio: #0284c7;
+    --tag-personal: #db2777;
+    --tag-salud: #059669;
+
+    /* ================= PRIORIDADES ================= */
+
+    --prio-urgente: #dc2626;
+    --prio-alta: #d97706;
+    --prio-media: #7c3aed;
+    --prio-baja: #0f766e;
+
+    /* ================= ESTADOS ================= */
+
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+
+    /* ================= SOMBRAS ================= */
+
+    --shadow-xs:
+        0 1px 2px rgba(15, 23, 42, 0.04);
+
+    --shadow-sm:
+        0 4px 12px rgba(15, 23, 42, 0.06);
+
+    --shadow-md:
+        0 12px 30px rgba(15, 23, 42, 0.08);
+
+    --shadow-lg:
+        0 20px 45px rgba(15, 23, 42, 0.12);
+
+    --shadow-primary:
+        0 10px 25px rgba(99, 91, 255, 0.25);
+
+    /* ================= RADIOS ================= */
+
+    --radius-xs: 6px;
+    --radius-sm: 9px;
+    --radius-md: 13px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    /* ================= TRANSICIONES ================= */
+
+    --transition:
+        all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+/* ==========================================================================
+   MODO OSCURO
+   ========================================================================== */
 
 body.dark-mode {
-    --fondo: #121212;
-    --panel: #1f1f1f;
-    --texto: #f5f5f5;
-    --texto-secundario: #bdbdbd;
-    --borde: #3b3b3b;
-    --principal: #8b5cf6;
-    --hover: #2b2540;
+
+    --bg-app: #0b1020;
+    --bg-card: #151c2e;
+    --bg-card-hover: #1a2338;
+
+    --bg-sidebar: #090d1a;
+    --bg-sidebar-hover: #1c2540;
+
+    --sidebar-text: #ffffff;
+    --sidebar-muted: #aeb8cf;
+    --sidebar-border: rgba(255, 255, 255, 0.08);
+
+    /* Textos más blancos para mejorar contraste */
+
+    --text-primary: #ffffff;
+    --text-secondary: #e2e8f0;
+    --text-muted: #aab4c7;
+
+    --border-color: #2b354b;
+    --border-light: #202a3e;
+
+    --primary: #8178ff;
+    --primary-hover: #958dff;
+    --primary-light: rgba(129, 120, 255, 0.15);
+    --primary-soft: rgba(129, 120, 255, 0.08);
+
+    --gradient-primary:
+        linear-gradient(
+            135deg,
+            #6d63ff 0%,
+            #9b6dff 100%
+        );
+
+    --gradient-sidebar:
+        linear-gradient(
+            180deg,
+            #080b16 0%,
+            #11182a 100%
+        );
+
+    /* Los colores de etiquetas se mantienen vivos */
+
+    --tag-trabajo: #fb923c;
+    --tag-estudio: #38bdf8;
+    --tag-personal: #f472b6;
+    --tag-salud: #34d399;
+
+    --prio-urgente: #fb7185;
+    --prio-alta: #fbbf24;
+    --prio-media: #a78bfa;
+    --prio-baja: #2dd4bf;
+
+    --shadow-xs:
+        0 1px 2px rgba(0, 0, 0, 0.2);
+
+    --shadow-sm:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+
+    --shadow-md:
+        0 12px 30px rgba(0, 0, 0, 0.3);
+
+    --shadow-lg:
+        0 20px 45px rgba(0, 0, 0, 0.4);
 }
+
+
+/* ==========================================================================
+   2. RESET
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family:
+        'Inter',
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 body {
-    background: var(--fondo);
-    color: var(--texto);
-    transition: .3s;
-}
+    min-height: 100vh;
 
-.Barra-Izq {
-    background: var(--panel);
-    color: var(--texto);
-}
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(99, 91, 255, 0.06),
+            transparent 30%
+        ),
+        var(--bg-app);
 
-.Barra-Der {
-    background: var(--fondo);
-}
+    color: var(--text-primary);
 
-#Barra-agregar-Tareas,
-#Barra-Progreso,
-.Tarea {
-    background: var(--panel);
-    color: var(--texto);
-}
+    line-height: 1.5;
 
-input,
-select {
-    background: var(--panel);
-    color: var(--texto);
-    border: 1px solid var(--borde);
-}
-
-button {
-    background: var(--panel);
-    color: var(--texto);
-    border: 1px solid var(--borde);
-}
-
-#Agregar-Tarea-Btn {
-    background: var(--principal);
-    color: white;
-}
-
-#Filtros-Izq button:hover {
-    background: var(--principal);
-    color: white;
-}
-
-/* ==========================
-PRIORIDADES
-========================== */
-
-.PrioridadBaja {
-    background: #dcfce7;
-    color: #15803d;
-    padding: 5px 10px;
-    margin-left: 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.PrioridadMedia {
-    background: #fef3c7;
-    color: #b45309;
-    padding: 5px 10px;
-    margin-left: 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.PrioridadAlta {
-    background: #fee2e2;
-    color: #dc2626;
-    padding: 5px 10px;
-    margin-left: 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.PrioridadUrgente {
-    background: #875ff7;
-    color: white;
-    padding: 5px 10px;
-    margin-left: 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.borrar-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 36px;
-    height: 36px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: transparent;
-    color: #ef4444;
-
-    cursor: pointer;
-    transition: all .2s ease;
-}
-
-.borrar-btn:hover {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.borrar-btn:active {
-    transform: scale(0.95);
-}
-
-.borrar-btn svg {
-    width: 18px;
-    height: 18px;
-    stroke-width: 2;
-}
-
-.editar-btn {
-    margin-left: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 36px;
-    height: 36px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: transparent;
-    color: #6d3cf5;
-
-    cursor: pointer;
-    transition: all .2s ease;
-}
-
-.editar-btn:hover {
-    background: #ede9fe;
-    color: #5930cc;
-}
-
-.editar-btn:active {
-    transform: scale(0.95);
-}
-
-.editar-btn svg {
-    width: 18px;
-    height: 18px;
-    stroke-width: 2;
-}
-
-/* ==========================
-BOTÓN MARCAR COMPLETADAS
-========================== */
-
-#Marcar-Completadas-Btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    padding: 10px 18px;
-
-    border: none;
-    border-radius: 10px;
-
-    background: #22c55e;
-    color: white;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-    transition: all .2s ease;
-}
-
-#Marcar-Completadas-Btn:hover {
-    background: #16a34a;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(34, 197, 94, .25);
-}
-
-#Marcar-Completadas-Btn:active {
-    transform: translateY(0);
-    box-shadow: none;
-}
-
-#Marcar-Completadas-Btn svg {
-    width: 18px;
-    height: 18px;
-    stroke-width: 2;
-}
-
-.TareaCompletada {
-    background: #f3f4f6;
-    opacity: 0.6;
-}
-
-.TareaCompletada .texto-tarea {
-    text-decoration: line-through;
-    color: #6b7280;
-}
-
-.TareaCompletada .tipo-tarea,
-.TareaCompletada .prioridad {
-    opacity: 0.6;
-}
-
-body.dark-mode .TareaCompletada {
-    background: #2b2b2b;
-}
-
-body.dark-mode .TareaCompletada .texto-tarea {
-    color: #9ca3af;
-}
-
-/* ==========================
-BOTONES MODO CLARO / OSCURO
-========================== */
-
-.Botones-Encabezado {
-    display: flex;
-    gap: 10px;
-}
-
-#Modo-Claro,
-#Modo-Oscuro {
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border: none;
-    border-radius: 50%;
-
-    cursor: pointer;
-    transition: all .25s ease;
-}
-
-#Modo-Claro svg,
-#Modo-Oscuro svg {
-    width: 20px;
-    height: 20px;
-    stroke-width: 2;
-}
-
-#Modo-Claro {
-    background: #fff7d6;
-    color: #f59e0b;
-}
-
-#Modo-Claro:hover {
-    background: #fde68a;
-    color: #b45309;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(245, 158, 11, .25);
-}
-
-#Modo-Claro:active {
-    transform: translateY(0);
-}
-
-#Modo-Oscuro {
-    background: #e0e7ff;
-    color: #4338ca;
-}
-
-#Modo-Oscuro:hover {
-    background: #6366f1;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(110, 112, 235, 0.3);
-}
-
-#Modo-Oscuro:active {
-    transform: translateY(0);
-}
-
-body.dark-mode #Modo-Oscuro {
-    background: #6d3cf5;
-    color: white;
-}
-
-body.dark-mode #Modo-Claro {
-    background: #2d2d2d;
-    color: #facc15;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 
+/* ==========================================================================
+   3. ACCESIBILIDAD
+   ========================================================================== */
 
-/* ==========================
-BOTÓN CALENDARIO
-========================== */
+.sr-only {
 
-.fecha-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
 
-    width: 36px;
-    height: 36px;
+    width: 1px;
+    height: 1px;
 
-    margin-right: 8px;
+    padding: 0;
+    margin: -1px;
 
-    border: none;
-    border-radius: 8px;
+    overflow: hidden;
 
-    background: transparent;
-    color: var(--principal);
+    clip: rect(0, 0, 0, 0);
 
-    cursor: pointer;
-    transition: all .2s ease;
+    white-space: nowrap;
+
+    border: 0;
 }
 
-.fecha-btn:hover {
-    background: #ede9fe;
-    color: #5930cc;
-    transform: translateY(-2px);
-}
 
-.fecha-btn:active {
-    transform: translateY(0);
-}
+:focus-visible {
 
-.fecha-btn svg {
-    width: 18px;
-    height: 18px;
-    stroke-width: 2;
-}
+    outline:
+        3px solid
+        rgba(99, 91, 255, 0.45);
 
-.fecha-texto {
-    display: inline-flex;
-    align-items: center;
-
-    min-width: 70px;
-    margin-right: 12px;
-
-    padding: 4px 8px;
+    outline-offset: 3px;
 
     border-radius: 6px;
-
-    background: #f3efff;
-    color: var(--principal);
-
-    font-size: 13px;
-    font-weight: 600;
 }
 
-/* ==========================
-BOTONES DE FILTRO
-========================== */
 
-#Filtro-Todas,
-#Filtro-Pendientes,
-#Filtro-Completadas {
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* ==========================================================================
+   4. ESTRUCTURA PRINCIPAL
+   ========================================================================== */
+
+#Contenedor-Padre {
+
     display: flex;
-    align-items: center;
-    gap: 8px;
 
-    padding: 10px 16px;
+    width: 100%;
 
-    border: 1px solid var(--borde);
-    border-radius: 10px;
+    min-height: 100vh;
 
-    background: var(--panel);
-    color: var(--texto);
+    max-width: 1500px;
 
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-    transition: all .2s ease;
+    margin: 0 auto;
 }
 
-#Filtro-Todas:hover,
-#Filtro-Pendientes:hover,
-#Filtro-Completadas:hover {
-    background: #ede9fe;
-    color: var(--principal);
-    border-color: var(--principal);
-    transform: translateY(-2px);
-}
 
-#Filtro-Todas:active,
-#Filtro-Pendientes:active,
-#Filtro-Completadas:active {
-    transform: translateY(0);
-}
+/* ==========================================================================
+   5. SIDEBAR
+   ========================================================================== */
 
-#Filtro-Todas svg,
-#Filtro-Pendientes svg,
-#Filtro-Completadas svg {
-    width: 18px;
-    height: 18px;
-    stroke-width: 2;
-}
+.Barra-Izq {
 
-/* ==========================
-FILTRO ACTIVO
-========================== */
+    width: 285px;
 
-#Filtro-Todas.activo,
-#Filtro-Pendientes.activo,
-#Filtro-Completadas.activo {
-    background: var(--principal);
-    color: white;
-    border-color: var(--principal);
-    box-shadow: 0 6px 14px rgba(109, 60, 245, .25);
-}
+    flex-shrink: 0;
 
-#Filtro-Todas.activo svg,
-#Filtro-Pendientes.activo svg,
-#Filtro-Completadas.activo svg {
-    color: white;
-}
+    padding: 2rem 1.25rem;
 
-/* ==========================
-ESTADOS DE TAREAS (BARRA IZQUIERDA)
-========================== */
-
-.Estado-Tareas li {
     display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    background:
+        var(--gradient-sidebar);
+
+    color: var(--sidebar-text);
+
+    border-right:
+        1px solid
+        var(--sidebar-border);
+
+    box-shadow:
+        10px 0 35px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Logo */
+
+.Barra-Izq h1 {
+
+    display: flex;
+
     align-items: center;
-    gap: 10px;
 
-    padding: 10px 14px;
-    margin-bottom: 8px;
+    gap: 0.7rem;
 
-    border-radius: 10px;
+    padding:
+        0.25rem
+        0.5rem;
 
-    color: var(--texto);
-    font-size: 15px;
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    letter-spacing: -0.02em;
+
+    color: #ffffff;
+}
+
+
+.Barra-Izq h1 svg {
+
+    width: 25px;
+    height: 25px;
+
+    color: #8b82ff;
+}
+
+
+/* Separadores */
+
+.Barra-Izq hr {
+
+    width: 100%;
+
+    height: 1px;
+
+    border: none;
+
+    background:
+        var(--sidebar-border);
+}
+
+
+/* Listas */
+
+.Estado-Tareas,
+.Etiquetas {
+
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.35rem;
+}
+
+
+/* Elementos */
+
+.Estado-Tareas li,
+.Etiquetas li {
+
+    min-height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0.6rem
+        0.8rem;
+
+    border-radius: var(--radius-md);
+
+    color: var(--sidebar-muted);
+
+    font-size: 0.9rem;
+
     font-weight: 500;
 
     cursor: pointer;
-    transition: all .2s ease;
+
+    transition: var(--transition);
 }
 
-.Estado-Tareas li:hover {
-    background: var(--hover);
-    color: var(--principal);
+
+.Estado-Tareas li:hover,
+.Etiquetas li:hover {
+
+    background:
+        var(--bg-sidebar-hover);
+
+    color: #ffffff;
+
+    transform:
+        translateX(3px);
 }
 
-.Estado-Tareas li svg {
+
+/* Elemento interno */
+
+.item-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.7rem;
+}
+
+
+.item-menu svg {
+
     width: 18px;
     height: 18px;
-    stroke-width: 2;
-    color: var(--principal);
-}
 
-.Estado-Tareas li:nth-child(1) svg {
-    color: #6d3cf5;   /* Todas */
-}
-
-.Estado-Tareas li:nth-child(2) svg {
-    color: #f59e0b;   /* Pendientes */
-}
-
-.Estado-Tareas li:nth-child(3) svg {
-    color: #22c55e;   /* Completadas */
-}
-
-/* ==========================
-CÍRCULOS DE ETIQUETAS
-========================== */
-
-.circulo {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin-right: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.circulo-trabajo {
-    background: #3b82f6;
-}
-
-.circulo-estudio {
-    background: #22c55e;
-}
-
-.circulo-personal {
-    background: #8b5cf6;
-}
-
-.circulo-salud {
-    background: #f59e0b;
-}
-
-.circulo-trabajo,
-.circulo-estudio,
-.circulo-personal,
-.circulo-salud {
-    box-shadow: 0 0 8px rgba(0, 0, 0, .15);
-}
-
-/* ==========================
-ICONO "MIS TAREAS"
-========================== */
-
-.Barra-Izq h2 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.Barra-Izq h2 svg {
-    width: 28px;
-    height: 28px;
-
-    color: var(--principal);
-    stroke-width: 2.2;
-
-    padding: 8px;
-    border-radius: 12px;
-
-    background: rgba(109, 60, 245, 0.12);
-
-    box-shadow: 0 4px 12px rgba(109, 60, 245, 0.18);
-}
-
-.Barra-Izq h2 svg {
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.Barra-Izq:hover h2 svg {
-    transform: rotate(-8deg) scale(1.08);
-    box-shadow: 0 6px 18px rgba(109, 60, 245, 0.28);
+    opacity: 0.8;
 }
 
 
-/* ==========================
-PROGRESO GENERAL
-========================== */
+/* Contadores */
 
-#Barra-Progreso {
-    margin-top: 25px;
-    padding: 20px;
+.contador-menu {
 
-    background: var(--panel);
-    border: 1px solid var(--borde);
-    border-radius: 16px;
+    min-width: 28px;
 
-    box-shadow: 0 6px 18px var(--sombra);
-}
-
-#Barra-Progreso-Header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    margin-bottom: 15px;
-}
-
-#Barra-Progreso-Header svg {
-    width: 22px;
-    height: 22px;
-
-    color: var(--principal);
-    stroke-width: 2.2;
-}
-
-#Barra-Progreso h3 {
-    margin: 0;
-    color: var(--texto);
-    font-size: 18px;
-}
-
-#Barra-Entera {
-    width: 100%;
-    height: 12px;
-
-    background: #e5e7eb;
-    border-radius: 999px;
-    overflow: hidden;
-}
-
-#Barra-Completada {
-    width: 0%;
-    height: 100%;
-
-    background: linear-gradient(90deg, #8b5cf6, #6d3cf5);
-
-    border-radius: inherit;
-
-    transition: width .4s ease;
-}
-
-#Contador-Tareas-Completadas {
-    margin-top: 15px;
+    padding:
+        0.15rem
+        0.45rem;
 
     text-align: center;
 
-    color: var(--texto-secundario);
+    border-radius: 20px;
 
-    font-size: 14px;
-    font-weight: 600;
-}
+    background:
+        rgba(255, 255, 255, 0.08);
 
-#Porcentaje-Progreso {
-    margin-top: 8px;
+    color: #dce1ef;
 
-    text-align: center;
+    font-size: 0.72rem;
 
-    color: var(--principal);
-
-    font-size: 28px;
     font-weight: 700;
 }
 
-.Titulo-Encabezado {
-    display: flex;
-    flex-direction: column;
+
+/* Etiquetas */
+
+#titulo-etiquetas {
+
+    margin-bottom: 0.55rem;
+
+    padding-left: 0.5rem;
+
+    color: #7f89a5;
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
 }
 
-.Titulo-Encabezado h1 {
-    margin: 0;
-    font-size: 30px;
-    color: var(--texto);
+
+.circulo {
+
+    width: 10px;
+    height: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.05);
 }
+
+
+.circulo-trabajo {
+    background: var(--tag-trabajo);
+}
+
+.circulo-estudio {
+    background: var(--tag-estudio);
+}
+
+.circulo-personal {
+    background: var(--tag-personal);
+}
+
+.circulo-salud {
+    background: var(--tag-salud);
+}
+
+
+/* ==========================================================================
+   6. PROGRESO
+   ========================================================================== */
+
+#Barra-Progreso {
+
+    margin-top: auto;
+
+    padding: 1.15rem;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: var(--radius-lg);
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+
+.Progreso-Header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 0.75rem;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+}
+
+
+.Titulo-Progreso {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    color: #d7dcef;
+}
+
+
+.Titulo-Progreso svg {
+
+    color: #8b82ff;
+}
+
+
+#Porcentaje-Progreso {
+
+    color: #a69fff;
+
+    font-weight: 800;
+}
+
+
+#Barra-Entera {
+
+    width: 100%;
+
+    height: 8px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.09);
+}
+
+
+#Barra-Completada {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #635bff,
+            #a78bfa
+        );
+
+    box-shadow:
+        0 0 12px rgba(129, 120, 255, 0.45);
+
+    transition:
+        width 0.4s ease;
+}
+
+
+#Contador-Tareas-Completadas {
+
+    margin-top: 0.65rem;
+
+    color: #9da7bd;
+
+    font-size: 0.72rem;
+
+    text-align: right;
+}
+
+
+/* ==========================================================================
+   7. CONTENIDO PRINCIPAL
+   ========================================================================== */
+
+.Barra-Der {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding:
+        2.5rem
+        3rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    overflow-y: auto;
+}
+
+
+/* ==========================================================================
+   8. ENCABEZADO
+   ========================================================================== */
+
+#Encabezado {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1.25rem;
+
+    flex-wrap: wrap;
+}
+
+
+.Titulo-Encabezado h2 {
+
+    font-size: 1.85rem;
+
+    font-weight: 850;
+
+    letter-spacing: -0.04em;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--text-primary),
+            var(--primary)
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
 
 .Titulo-Encabezado p {
-    margin-top: 4px;
-    font-size: 14px;
-    color: var(--texto-secundario);
-    font-weight: 400;
+
+    margin-top: 0.2rem;
+
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
 }
+
+
+/* ==========================================================================
+   9. BUSCADOR
+   ========================================================================== */
+
+#Buscador-Tareas {
+
+    flex: 1;
+
+    min-width: 220px;
+
+    max-width: 370px;
+
+    min-height: 46px;
+
+    padding:
+        0.7rem
+        1rem;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius: var(--radius-lg);
+
+    background:
+        var(--bg-card);
+
+    color:
+        var(--text-primary);
+
+    font-size: 0.9rem;
+
+    box-shadow:
+        var(--shadow-xs);
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+
+#Buscador-Tareas::placeholder {
+
+    color: var(--text-muted);
+}
+
+
+#Buscador-Tareas:hover {
+
+    border-color:
+        rgba(99, 91, 255, 0.35);
+}
+
+
+#Buscador-Tareas:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(99, 91, 255, 0.1);
+}
+
+
+/* ==========================================================================
+   10. MODO CLARO / OSCURO
+   ========================================================================== */
+
+.Botones-Encabezado {
+
+    display: flex;
+
+    gap: 0.25rem;
+
+    padding: 0.25rem;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius: var(--radius-lg);
+
+    background:
+        var(--bg-card);
+
+    box-shadow:
+        var(--shadow-xs);
+}
+
+
+.Botones-Encabezado button {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--text-secondary);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+.Botones-Encabezado button:hover {
+
+    color: var(--primary);
+
+    background:
+        var(--primary-light);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* ==========================================================================
+   11. FORMULARIO
+   ========================================================================== */
+
+#Barra-agregar-Tareas {
+
+    padding: 1.35rem;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius: var(--radius-xl);
+
+    background:
+        var(--bg-card);
+
+    box-shadow:
+        var(--shadow-md);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+    transition: var(--transition);
+}
+
+
+#Barra-agregar-Tareas:hover {
+
+    box-shadow:
+        var(--shadow-lg);
+}
+
+
+#Input-Tarea {
+
+    width: 100%;
+
+    padding:
+        0.5rem
+        0.2rem;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color:
+        var(--text-primary);
+
+    font-size: 1.05rem;
+
+    font-weight: 500;
+}
+
+
+#Input-Tarea::placeholder {
+
+    color:
+        var(--text-muted);
+}
+
+
+#Agregar-Tarea-Der {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.65rem;
+
+    flex-wrap: wrap;
+}
+
+
+/* ==========================================================================
+   12. SELECTORES
+   ========================================================================== */
+
+select,
+.selector-fecha {
+
+    min-height: 44px;
+
+    padding:
+        0.5rem
+        0.8rem;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        var(--bg-app);
+
+    color:
+        var(--text-primary);
+
+    font-size: 0.82rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+
+select:hover,
+.selector-fecha:hover {
+
+    border-color:
+        var(--primary);
+
+    background:
+        var(--primary-soft);
+}
+
+
+select:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 91, 255, 0.1);
+}
+
+select option {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   13. FECHA
+   ========================================================================== */
+
+.selector-fecha {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+}
+
+
+.fecha-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 36px;
+    min-height: 36px;
+
+    border: none;
+
+    border-radius: var(--radius-sm);
+
+    background: transparent;
+
+    color:
+        var(--primary);
+
+    cursor: pointer;
+}
+
+
+.fecha-formulario,
+.fecha {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    cursor: pointer;
+
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+#Fecha-Formulario-Texto {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.8rem;
+
+    font-weight: 500;
+}
+
+
+/* ==========================================================================
+   14. BOTONES AGREGAR / CANCELAR
+   ========================================================================== */
+
+#Agregar-Tarea-Btn,
+#Cancelar-Edicion-Btn {
+
+    min-height: 44px;
+
+    padding:
+        0.55rem
+        1.2rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.45rem;
+
+    border: none;
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+#Agregar-Tarea-Btn {
+
+    margin-left: auto;
+
+    background:
+        var(--gradient-primary);
+
+    color: #ffffff;
+
+    box-shadow:
+        var(--shadow-primary);
+}
+
+
+#Agregar-Tarea-Btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 14px 30px
+        rgba(99, 91, 255, 0.3);
+}
+
+
+#Agregar-Tarea-Btn:active {
+
+    transform:
+        translateY(0);
+}
+
+
+#Cancelar-Edicion-Btn {
+
+    background:
+        var(--border-color);
+
+    color:
+        var(--text-primary);
+}
+
+
+#Cancelar-Edicion-Btn:hover {
+
+    background:
+        var(--text-muted);
+
+    color:
+        #ffffff;
+}
+
+
+/* ==========================================================================
+   15. FILTROS
+   ========================================================================== */
+
+#Filtros {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    flex-wrap: wrap;
+
+    /* Más separación visual */
+
+    margin-top: 0.75rem;
+
+    margin-bottom: 0.75rem;
+}
+
+
+/* Filtros izquierda */
+
+#Filtros-Izq {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.25rem;
+
+    padding: 0.3rem;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius:
+        var(--radius-lg);
+
+    background:
+        var(--bg-card);
+
+    box-shadow:
+        var(--shadow-sm);
+}
+
+
+#Filtros-Izq button {
+
+    min-height: 40px;
+
+    padding:
+        0.45rem
+        0.9rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.4rem;
+
+    border: none;
+
+    border-radius:
+        var(--radius-sm);
+
+    background: transparent;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+#Filtros-Izq button:hover {
+
+    color:
+        var(--primary);
+
+    background:
+        var(--primary-light);
+}
+
+
+#Filtros-Izq button.activo {
+
+    color: #ffffff;
+
+    background:
+        var(--gradient-primary);
+
+    box-shadow:
+        0 4px 10px
+        rgba(99, 91, 255, 0.2);
+}
+
+
+/* Ordenamiento */
 
 #Filtros-Der {
+
     display: flex;
+
     align-items: center;
-    gap: 12px;
+
+    gap: 0.75rem;
 }
+
 
 #Ordenamiento-Tareas {
+
     min-width: 170px;
+
+    box-shadow:
+        var(--shadow-xs);
 }
 
-#Marcar-Completadas-Btn {
+
+/* ==========================================================================
+   16. LISTA DE TAREAS
+   ========================================================================== */
+
+#Contenedor-Tareas {
+
+    margin-top: 0.25rem;
+}
+
+
+#Lista-Tareas {
+
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.85rem;
+}
+
+
+.Tarea-Item {
+
+    animation:
+        fadeInSlide
+        0.3s
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* ==========================================================================
+   17. TARJETA
+   ========================================================================== */
+
+.Tarea {
+
+    position: relative;
+
+    min-width: 0;
+
+    padding:
+        1rem
+        1.2rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius:
+        var(--radius-lg);
+
+    background:
+        var(--bg-card);
+
+    box-shadow:
+        var(--shadow-xs);
+
+    transition: var(--transition);
+}
+
+
+.Tarea::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 15%;
+
+    width: 3px;
+
+    height: 70%;
+
+    border-radius: 10px;
+
+    background:
+        var(--primary);
+
+    opacity: 0;
+
+    transition: var(--transition);
+}
+
+
+.Tarea:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(99, 91, 255, 0.2);
+
+    box-shadow:
+        var(--shadow-md);
+}
+
+
+.Tarea:hover::before {
+
+    opacity: 1;
+}
+
+
+/* ==========================================================================
+   18. LADO IZQUIERDO DE TAREA
+   ========================================================================== */
+
+.TareaIzquierda {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.85rem;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* ==========================================================================
+   19. CHECKBOX
+   ========================================================================== */
+
+.checkbox {
+
+    appearance: none;
+
+    width: 23px;
+    height: 23px;
+
+    min-width: 23px;
+
+    position: relative;
+
+    border:
+        2px solid
+        var(--text-muted);
+
+    border-radius:
+        7px;
+
+    background:
+        transparent;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+.checkbox:hover {
+
+    border-color:
+        var(--primary);
+
+    transform:
+        scale(1.05);
+}
+
+
+.checkbox:checked {
+
+    border-color:
+        var(--primary);
+
+    background:
+        var(--gradient-primary);
+
+    box-shadow:
+        0 3px 8px
+        rgba(99, 91, 255, 0.25);
+}
+
+
+.checkbox:checked::after {
+
+    content: "✓";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -55%);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 900;
+}
+
+
+/* ==========================================================================
+   20. TEXTO
+   ========================================================================== */
+
+.texto-tarea {
+
+    min-width: 0;
+
+    color:
+        var(--text-primary);
+
+    font-size: 0.94rem;
+
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+
+    transition: var(--transition);
+}
+
+
+.TareaCompletada {
+
+    opacity: 0.62;
+}
+
+
+.TareaCompletada .texto-tarea {
+
+    color:
+        var(--text-muted);
+
+    text-decoration:
+        line-through;
+
+    text-decoration-thickness: 1.5px;
+}
+
+
+/* ==========================================================================
+   21. TIPO DE TAREA
+   ========================================================================== */
+
+.tipo-tarea {
+
+    padding:
+        0.3rem
+        0.7rem;
+
+    border-radius:
+        20px;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    letter-spacing: 0.01em;
+}
+
+
+.TipoTareaTrabajo {
+
+    background:
+        rgba(249, 115, 22, 0.12);
+
+    color:
+        var(--tag-trabajo);
+}
+
+
+.TipoTareaSalud {
+
+    background:
+        rgba(16, 185, 129, 0.12);
+
+    color:
+        var(--tag-salud);
+}
+
+
+.TipoTareaPersonal {
+
+    background:
+        rgba(236, 72, 153, 0.12);
+
+    color:
+        var(--tag-personal);
+}
+
+
+.TipoTareaEstudio {
+
+    background:
+        rgba(2, 132, 199, 0.12);
+
+    color:
+        var(--tag-estudio);
+}
+
+
+/* ==========================================================================
+   22. LADO DERECHO
+   ========================================================================== */
+
+.TareaDerecha {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.55rem;
+
+    flex-shrink: 0;
+}
+
+
+.contenedor-fecha {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.35rem;
+
+    color:
+        var(--text-muted);
+
+    font-size: 0.77rem;
+
+    font-weight: 500;
+}
+
+
+.contenedor-fecha svg {
+
+    width: 16px;
+    height: 16px;
+
+    color:
+        var(--primary);
+}
+
+
+/* ==========================================================================
+   23. PRIORIDAD
+   ========================================================================== */
+
+.prioridad {
+
+    padding:
+        0.3rem
+        0.65rem;
+
+    border-radius:
+        7px;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
     white-space: nowrap;
 }
 
-/* ==========================
-BOTÓN FAVORITO
-========================== */
 
-.favorito-btn {
+.PrioridadUrgente {
+
+    background:
+        rgba(239, 68, 68, 0.12);
+
+    color:
+        var(--prio-urgente);
+}
+
+
+.PrioridadAlta {
+
+    background:
+        rgba(245, 158, 11, 0.13);
+
+    color:
+        var(--prio-alta);
+}
+
+
+.PrioridadMedia {
+
+    background:
+        rgba(139, 92, 246, 0.13);
+
+    color:
+        var(--prio-media);
+}
+
+
+.PrioridadBaja {
+
+    background:
+        rgba(20, 184, 166, 0.13);
+
+    color:
+        var(--prio-baja);
+}
+
+
+/* ==========================================================================
+   24. BOTONES DE ACCIONES
+   ========================================================================== */
+
+.favorito-btn,
+.editar-btn,
+.borrar-btn
+ {
+
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+    min-height: 38px;
+
     display: flex;
-    justify-content: center;
+
     align-items: center;
 
-    width: 36px;
-    height: 36px;
+    justify-content: center;
 
     border: none;
-    border-radius: 8px;
 
-    background: transparent;
-    color: #9ca3af;
+    border-radius:
+        var(--radius-sm);
+
+    background:
+        transparent;
+
+    color:
+        var(--text-muted);
 
     cursor: pointer;
-    transition: all .2s ease;
+
+    transition: var(--transition);
 }
+
 
 .favorito-btn:hover {
-    background: #ffe4e6;
-    color: #e11d48;
-    transform: translateY(-2px);
+
+    color:
+        #ec4899;
+
+    background:
+        rgba(236, 72, 153, 0.1);
 }
 
-.favorito-btn:active {
-    transform: scale(0.95);
-}
-
-.favorito-btn svg {
-    width: 18px;
-    height: 18px;
-    stroke-width: 2;
-}
 
 .favorito-btn.activo {
-    background: #ffe4e6;
-    color: #e11d48;
-    box-shadow: 0 4px 10px rgba(225, 29, 72, .25);
+
+    color:
+        #ec4899;
+
+    background:
+        rgba(236, 72, 153, 0.1);
+
+    animation:
+        heartBeat
+        0.3s
+        ease;
 }
 
-.favorito-btn.activo:hover {
-    background: #fecdd3;
+
+.editar-btn:hover {
+
+    color:
+        var(--primary);
+
+    background:
+        var(--primary-light);
 }
 
-.favorito-btn.activo svg {
-    fill: currentColor;
-    animation: favoritoPop .25s ease;
+
+.borrar-btn:hover {
+
+    color:
+        var(--danger);
+
+    background:
+        rgba(239, 68, 68, 0.1);
 }
 
-@keyframes favoritoPop {
+
+/* ==========================================================================
+   25. FOOTER
+   ========================================================================== */
+
+#Contador-tareas {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: auto;
+
+    padding-top: 0.75rem;
+}
+
+
+#borrarCompletadas {
+
+    min-height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    padding:
+        0.5rem
+        1rem;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        var(--bg-card);
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+#borrarCompletadas:hover {
+
+    color:
+        var(--danger);
+
+    border-color:
+        rgba(239, 68, 68, 0.3);
+
+    background:
+        rgba(239, 68, 68, 0.06);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* ==========================================================================
+   26. ANIMACIONES
+   ========================================================================== */
+
+@keyframes fadeInSlide {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes heartBeat {
+
     0% {
-        transform: scale(.6);
+        transform: scale(1);
     }
-    70% {
-        transform: scale(1.2);
+
+    50% {
+        transform: scale(1.22);
     }
+
     100% {
         transform: scale(1);
     }
 }
 
-.checkbox {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #9ca3af;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    transition: .2s ease;
-}
 
-/* cuando está marcado */
-.checkbox:checked {
-    background: #8b5cf6;
-    border-color: #8b5cf6;
-}
+/* ==========================================================================
+   27. TABLETS / LAPTOPS
+   ========================================================================== */
 
-/* crear el tilde */
-.checkbox:checked::after {
-    content: "✓";
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    position: absolute;
-}
+@media (max-width: 1100px) {
 
-.selector-fecha {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-}
+    .Barra-Der {
 
-.fecha {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
+        padding:
+            2rem;
+    }
 
-.fecha-texto {
-    display: inline-flex;
-    align-items: center;
-    min-width: 70px;
-    padding: 4px 8px;
-    margin-left: 8px;
+    #Buscador-Tareas {
 
-    border-radius: 6px;
-
-    background: #f3efff;
-    color: var(--principal);
-
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.contenedor-fecha {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.Etiquetas {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 0;
-    margin: 0;
+        max-width: 300px;
+    }
 }
 
 
-.Etiqueta-Item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* ==========================================================================
+   28. TABLETS
+   ========================================================================== */
 
-    width: 100%;
+@media (max-width: 768px) {
+
+    #Contenedor-Padre {
+
+        flex-direction: column-reverse;
+    }
+
+
+    /* Sidebar */
+
+    .Barra-Izq {
+
+        width: 100%;
+
+        padding:
+            1.25rem;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            var(--sidebar-border);
+    }
+
+
+    .Barra-Izq h1 {
+
+        justify-content: center;
+    }
+
+
+    .Estado-Tareas,
+    .Etiquetas {
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+    }
+
+
+    .Estado-Tareas li,
+    .Etiquetas li {
+
+        flex:
+            1 1
+            calc(50% - 0.5rem);
+    }
+
+
+    #Barra-Progreso {
+
+        margin-top: 0;
+    }
+
+
+    /* Contenido */
+
+    .Barra-Der {
+
+        padding:
+            1.5rem;
+
+        gap: 1.25rem;
+    }
+
+
+    #Encabezado {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .Titulo-Encabezado {
+
+        text-align: center;
+    }
+
+
+    #Buscador-Tareas {
+
+        width: 100%;
+
+        max-width: none;
+    }
+
+
+    .Botones-Encabezado {
+
+        align-self: flex-end;
+    }
+
+
+    /* Formulario */
+
+    #Agregar-Tarea-Der {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    #Agregar-Tarea-Der select,
+    .selector-fecha {
+
+        width: 100%;
+    }
+
+
+    #Agregar-Tarea-Btn,
+    #Cancelar-Edicion-Btn {
+
+        width: 100%;
+
+        grid-column:
+            span 2;
+    }
+
+
+    #Agregar-Tarea-Btn {
+
+        margin-left: 0;
+    }
+
+
+    /* Filtros */
+
+    #Filtros {
+
+        margin-top: 1rem;
+
+        margin-bottom: 1rem;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0.75rem;
+    }
+
+
+    #Filtros-Izq {
+
+        width: 100%;
+    }
+
+
+    #Filtros-Izq button {
+
+        flex: 1;
+    }
+
+
+    #Filtros-Der {
+
+        width: 100%;
+    }
+
+
+    #Ordenamiento-Tareas {
+
+        width: 100%;
+    }
 }
 
 
-.Etiqueta-Item li {
-    list-style: none;
+/* ==========================================================================
+   29. MÓVILES
+   ========================================================================== */
 
-    display: flex;
-    align-items: center;
-    gap: 10px;
+@media (max-width: 600px) {
 
-    color: var(--texto);
-    font-weight: 500;
+    .Barra-Der {
+
+        padding:
+            1rem;
+    }
+
+
+    .Estado-Tareas li,
+    .Etiquetas li {
+
+        flex:
+            1 1
+            100%;
+    }
+
+
+    /* Formulario */
+
+    #Agregar-Tarea-Der {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    #Agregar-Tarea-Btn,
+    #Cancelar-Edicion-Btn {
+
+        grid-column:
+            span 1;
+    }
+
+
+    /* Filtros */
+
+    #Filtros {
+
+        margin-top: 1.25rem;
+
+        margin-bottom: 1.25rem;
+    }
+
+
+    #Filtros-Izq {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    #Filtros-Izq button {
+
+        width: 100%;
+
+        padding:
+            0.45rem
+            0.3rem;
+
+        font-size: 0.72rem;
+    }
+
+
+    /* Tarea */
+
+    .Tarea {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0.75rem;
+
+        padding:
+            1rem;
+    }
+
+
+    .TareaIzquierda {
+
+        width: 100%;
+
+        display: flex;
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+
+        gap: 0.6rem;
+    }
+
+
+    .texto-tarea {
+
+        flex:
+            1 1
+            60%;
+
+        min-width: 140px;
+    }
+
+
+    .tipo-tarea {
+
+        margin-left: auto;
+
+        flex-shrink: 0;
+    }
+
+
+    .TareaDerecha {
+
+        width: 100%;
+
+        padding-top: 0.7rem;
+
+        border-top:
+            1px solid
+            var(--border-color);
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        flex-wrap: wrap;
+
+        gap: 0.4rem;
+    }
+
+
+    .acciones-tarea {
+
+        margin-left: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 0.2rem;
+    }
 }
 
 
-.Etiqueta-Item span:not(.circulo) {
-    width: 28px;
-    height: 28px;
+/* ==========================================================================
+   30. MÓVILES MUY PEQUEÑOS
+   ========================================================================== */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 400px) {
 
-    border-radius: 50%;
+    .Titulo-Encabezado h2 {
 
-    background: #f3efff;
-    color: var(--principal);
-
-    font-weight: bold;
-}
-
-/* ==========================
-ALINEACIÓN BARRA IZQUIERDA
-========================== */
-
-.Estado-Tareas,
-.Etiquetas {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    padding: 0;
-    margin: 0;
-}
+        font-size: 1.45rem;
+    }
 
 
-.Estado-Item,
-.Etiqueta-Item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    .Titulo-Encabezado p {
 
-    width: 100%;
-}
+        font-size: 0.82rem;
+    }
 
 
-.Estado-Nombre {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    #Filtros-Izq {
+
+        grid-template-columns:
+            1fr;
+    }
 
 
-.Estado-Item span,
-.Etiqueta-Item > span:not(.circulo) {
-    width: 28px;
-    height: 28px;
+    #Filtros-Izq button {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        min-height: 42px;
+    }
 
-    border-radius: 50%;
 
-    background: #f3efff;
-    color: #6d3cf5;
+    .TareaDerecha {
 
-    font-weight: bold;
+        align-items: flex-start;
+    }
+
+
+    .contenedor-fecha {
+
+        flex:
+            1 1
+            100%;
+    }
+
+
+    .prioridad {
+
+        margin-right: auto;
+    }
 }
